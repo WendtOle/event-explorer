@@ -2,29 +2,17 @@
 import { useState } from "react";
 import MapComponent from "./Map";
 import { Event as EventComponent } from "./Event";
-import { FilterButton } from "./FilterButton";
 import { EventInDb } from "@/client";
 import { useEvents } from "./useDemosEvents";
-import { thisWeek, today, tomorrow } from "./timeUtils";
+import { getDateRange } from "./timeUtils";
 import {Event as EventType} from "./useEvents";
 
-enum Filter {
-		TODAY= "today",
-		TOMORROW = "tomorrow",
-		THIS_WEEK = "thisWeek",
-	}
-		const filterEntries: Record<Filter, {label: string, getTimeRange: () => {start: string, end: string}}> = {[Filter.TODAY]:{
-		label: "Heute",
-		getTimeRange: today
-	}, [Filter.TOMORROW]:{label: "Morgen", getTimeRange: tomorrow},
-[Filter.THIS_WEEK]: {label: "Aktuelle Woche", getTimeRange: thisWeek}
-}
 
 export default function EventExplorer() {
 	const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>();
+	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
-	const [selectedTimeFilter, setSelectedTimeFilter] = useState<Filter>(Filter.TODAY)
-	const {events} = useEvents(filterEntries[selectedTimeFilter].getTimeRange())
+	const {events} = useEvents(getDateRange(selectedDate))
 
 	const toggleEvent = (event: EventType) => () => setSelectedEvent(state => {
 		if (state === undefined) {
@@ -36,27 +24,54 @@ export default function EventExplorer() {
 		return undefined
 	})
 
+	const goToPreviousDay = () => {
+		const previousDay = new Date(selectedDate);
+		previousDay.setDate(previousDay.getDate() - 1);
+		setSelectedDate(previousDay);
+	}
+
+	const goToNextDay = () => {
+		const nextDay = new Date(selectedDate);
+		nextDay.setDate(nextDay.getDate() + 1);
+		setSelectedDate(nextDay);
+	}
+
+	const formatDate = (date: Date) => {
+		return date.toLocaleDateString('de-DE', { 
+			weekday: 'long', 
+			year: 'numeric', 
+			month: 'long', 
+			day: 'numeric' 
+		});
+	}
+
 	return (
 		<div className="p-4 max-w-3xl mx-auto flex flex-col h-dvh gap-2">
 			<div className="flex flex-row justify-between items-center">
 				<h1 className="text-xl font-bold">Event Explorer</h1>
 			</div>
-			<div className="flex flex-col gap-2">
-				<div className="flex justify-between">
-					<div className="flex gap-2">
-						{Object.entries(filterEntries).map(([key, value]) => {
-							return <FilterButton key={key} onClick={() => setSelectedTimeFilter(key as Filter)} enabled={selectedTimeFilter === key}>
-							{value.label}
-						</FilterButton>
-						})}
-					</div>
-				</div>
-			</div>
+			<h2 className="text-lg font-semibold text-center">
+				{formatDate(selectedDate)}
+			</h2>
 			<MapComponent
 				event={selectedEvent}
 				events={events}
 				onEventClick={(event) => setSelectedEvent(event)}
 			/>
+			<div className="flex justify-between items-center py-1">
+				<button 
+					onClick={goToPreviousDay}
+					className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+				>
+					← Vorheriger Tag
+				</button>
+				<button 
+					onClick={goToNextDay}
+					className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+				>
+					Nächster Tag →
+				</button>
+			</div>
 			{events.length} Events
 			{events.length === 0 ? (
 				<p className="text-gray-500">Keine Events gefunden.</p>
