@@ -8,7 +8,7 @@ interface FilterButtonProps {
 export const FilterButton = ({ onClick, children, enabled }: FilterButtonProps) => {
 	return (<button
 		onClick={onClick}
-		className={`px-2 py-1 text-sm rounded-full flex items-center gapx-2 ${enabled ? "bg-blue-500 text-white" : "bg-white border"
+		className={`px-3 py-1.5 text-sm rounded-full flex items-center gap-1 shadow-sm transition-colors ${enabled ? "bg-accent text-accent-foreground" : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
 			}`}
 	>
 		<div>{children}</div>

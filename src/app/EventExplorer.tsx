@@ -2,7 +2,6 @@
 import { useState } from "react";
 import MapComponent from "./Map";
 import { Event as EventComponent } from "./Event";
-import { EventInDb } from "@/client";
 import { useEvents } from "./useDemosEvents";
 import { getDateRange } from "./timeUtils";
 import {Event as EventType} from "./useEvents";
@@ -58,18 +57,18 @@ export default function EventExplorer() {
 				events={events}
 				onEventClick={(event) => setSelectedEvent(event)}
 			/>
-			<div className="flex justify-between items-center py-1">
+			<div className="flex justify-between items-center py-2">
 				<button 
 					onClick={goToPreviousDay}
-					className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+					className="px-4 py-2 text-sm bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors flex items-center gap-1 shadow-sm"
 				>
-					← Vorheriger Tag
+					<span>←</span> <span>Vorheriger Tag</span>
 				</button>
 				<button 
 					onClick={goToNextDay}
-					className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+					className="px-4 py-2 text-sm bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors flex items-center gap-1 shadow-sm"
 				>
-					Nächster Tag →
+					<span>Nächster Tag</span> <span>→</span>
 				</button>
 			</div>
 			{events.length} Events
