@@ -10,7 +10,7 @@ import { useDateNavigation } from "./useDateNavigation";
 
 export default function EventExplorer() {
 	const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>();
-	const { goToPreviousDay, goToNextDay, goToToday, isToday, dateRange, formattedSelectedDate } = useDateNavigation();
+	const { goToPreviousDay, goToNextDay, goToToday, isToday, dateRange, formattedSelectedDate, previousDayLabel, nextDayLabel } = useDateNavigation();
 
 	const {events, isLoading} = useEvents(dateRange)
 
@@ -36,7 +36,7 @@ export default function EventExplorer() {
 			/>
 			<div className="flex justify-between items-center py-2">
 				<NavigationButton 
-					label="Vorheriger Tag"
+					label={previousDayLabel}
 					onClick={goToPreviousDay}
 					direction="left"
 				/>
@@ -46,7 +46,7 @@ export default function EventExplorer() {
 					selected={isToday()}
 				/>
 				<NavigationButton 
-					label="Nächster Tag"
+					label={nextDayLabel}
 					onClick={goToNextDay}
 					direction="right"
 				/>
