@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Development Process
+
+### Feature Implementation
+When implementing new features, **always start by outlining multiple implementation approaches** before coding:
+1. List 2-3 different ways the feature could be implemented
+2. Compare trade-offs (complexity, performance, maintainability, reusability)
+3. Discuss the approaches with the user if needed
+4. Choose the best approach and explain the reasoning
+5. Then proceed with implementation
+
+This ensures thoughtful architecture decisions and helps avoid refactoring later.
+
 ## Commands
 
 - `npm run dev` - Start development server with Turbopack
@@ -42,7 +54,7 @@ This is a Next.js 15 application that displays event/demonstration data on an in
 ## Code Style (from CRUSH.md)
 
 - **Imports**: Group by type (React, components, types, utils)
-- **Components**: Functional components with explicit return types, PascalCase naming
+- **Components**: Functional components with explicit return types, PascalCase naming, prefer arrow function syntax with direct template return (no explicit return statement), NEVER use `export default` - always use named exports
 - **Formatting**: 2-space indentation, single quotes, semicolons, explicit return types
 - **Control Structures**: Always use curly braces for if/else blocks, never use short syntax
 - **Arrow Functions**: Use destructuring in simple arrow functions when accessing object properties (e.g., `topics.map(({ name_de }) => name_de)` instead of `topics.map(topic => topic.name_de)`)
