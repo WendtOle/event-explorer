@@ -5,6 +5,7 @@ import { Event as EventComponent } from "./Event";
 import { useEvents } from "./useDemosEvents";
 import { getDateRange } from "./timeUtils";
 import {Event as EventType} from "./useEvents";
+import NavigationButton from "./NavigationButton";
 
 
 export default function EventExplorer() {
@@ -58,18 +59,16 @@ export default function EventExplorer() {
 				onEventClick={(event) => setSelectedEvent(event)}
 			/>
 			<div className="flex justify-between items-center py-2">
-				<button 
+				<NavigationButton 
+					label="Vorheriger Tag"
 					onClick={goToPreviousDay}
-					className="px-4 py-2 text-sm bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors flex items-center gap-1 shadow-sm"
-				>
-					<span>←</span> <span>Vorheriger Tag</span>
-				</button>
-				<button 
+					direction="left"
+				/>
+				<NavigationButton 
+					label="Nächster Tag"
 					onClick={goToNextDay}
-					className="px-4 py-2 text-sm bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors flex items-center gap-1 shadow-sm"
-				>
-					<span>Nächster Tag</span> <span>→</span>
-				</button>
+					direction="right"
+				/>
 			</div>
 			{events.length} Events
 			{events.length === 0 ? (
