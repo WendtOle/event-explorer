@@ -3,10 +3,11 @@
 interface NavigationButtonProps {
   label: string;
   onClick: () => void;
-  direction: 'left' | 'right';
+  direction?: 'left' | 'right';
+  selected?: boolean;
 }
 
-const NavigationButton = ({ label, onClick, direction }: NavigationButtonProps): JSX.Element => (
+const NavigationButton = ({ label, onClick, direction, selected = false }: NavigationButtonProps): JSX.Element => (
   <button 
     onClick={onClick}
     className="px-4 py-2 text-sm bg-accent text-accent-foreground rounded-full hover:bg-accent/90 transition-colors flex items-center gap-1 shadow-sm"
