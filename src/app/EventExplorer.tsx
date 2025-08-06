@@ -10,7 +10,7 @@ import { useDateNavigation } from "./useDateNavigation";
 
 export default function EventExplorer() {
 	const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>();
-	const { goToPreviousDay, goToNextDay, dateRange, selectedDate } = useDateNavigation();
+	const { goToPreviousDay, goToNextDay, goToToday, isToday, dateRange, formattedSelectedDate } = useDateNavigation();
 
 	const {events, isLoading} = useEvents(dateRange)
 
@@ -41,6 +41,11 @@ export default function EventExplorer() {
 					direction="left"
 				/>
 				<NavigationButton 
+					label="Heute"
+					onClick={goToToday}
+					selected={isToday()}
+				/>
+				<NavigationButton 
 					label="Nächster Tag"
 					onClick={goToNextDay}
 					direction="right"
@@ -50,6 +55,7 @@ export default function EventExplorer() {
 				events={events}
 				selectedEvent={selectedEvent}
 				onEventToggle={toggleEvent}
+				selectedDate={formattedSelectedDate}
 				isLoading={isLoading}
 			/>
 		</div>

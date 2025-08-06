@@ -10,12 +10,18 @@ interface EventListProps {
   selectedEvent: EventType | undefined;
   onEventToggle: (event: EventType) => () => void;
   isLoading: boolean;
+  selectedDate: string;
 }
 
-export const EventList = ({ events, selectedEvent, onEventToggle, isLoading }: EventListProps): JSX.Element => {
+export const EventList = ({ events, selectedEvent, onEventToggle, isLoading, selectedDate }: EventListProps): JSX.Element => {
+  const dateDisplay = <div className="text-right">{selectedDate}</div>;
+
   if (isLoading) {
       return (<>
-          <div className="h-5 bg-gray-200 rounded w-20 animate-pulse my-1"></div>
+          <div className="flex justify-between items-center">
+            <div className="h-5 bg-gray-200 rounded w-20 animate-pulse"></div>
+            {dateDisplay}
+          </div>
           <div className="grid gap-2">
             {Array.from({ length: 3 }).map((_, index) => (
               <EventSkeleton key={index} />
@@ -25,7 +31,10 @@ export const EventList = ({ events, selectedEvent, onEventToggle, isLoading }: E
   }
   return (
     <>
-      {events.length} Events
+      <div className="flex justify-between items-center">
+        <span>{events.length} Events</span>
+        {dateDisplay}
+      </div>
       {events.length === 0 ? (
         <p className="text-gray-500">Keine Events gefunden.</p>
       ) : (
