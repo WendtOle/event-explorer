@@ -63,7 +63,7 @@ export const useEvents = () => {
 					return [...acc, newWayPoint]
 				}, [] as Array<WayPoint>)
 				const filtered = detectLocationOutliers(alteredWayPoints, 2)
-				const bounds = new LatLngBounds(filtered.map(point => point.position))
+				const bounds = new LatLngBounds(filtered.map(({ position }) => position))
 				return { ...event, way_points: filtered, bounds, id: simpleHash(event.thema) }
 			})
 			setEvents(events);

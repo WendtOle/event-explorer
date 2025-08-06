@@ -69,7 +69,7 @@ const MapComponent = ({ event, events, onMapChange, disableFlyTo, onEventClick }
 			if (way_points.length === 1) {
 				addMarker(way_points[0], 'flag')
 			} else {
-				L.polyline(way_points.map(point => point.position), {
+				L.polyline(way_points.map(({ position }) => position), {
 					color: colors[0],
 				}).addTo(selectedMarkerLayer);
 				way_points.forEach((point, i, all) => {

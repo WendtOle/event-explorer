@@ -42,10 +42,10 @@ export const detectLocationOutliers = (
 	}));
 
 	const mean =
-		distances.reduce((sum, d) => sum + d.distance, 0) / distances.length;
+		distances.reduce((sum, { distance }) => sum + distance, 0) / distances.length;
 
 	const variance =
-		distances.reduce((sum, d) => sum + Math.pow(d.distance - mean, 2), 0) /
+		distances.reduce((sum, { distance }) => sum + Math.pow(distance - mean, 2), 0) /
 		distances.length;
 
 	const stdDev = Math.sqrt(variance);
