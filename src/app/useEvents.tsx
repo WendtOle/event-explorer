@@ -27,7 +27,9 @@ export const useEvents = () => {
 			const locationLookup: Record<string, Entry[]> = data.default || data;
 
 			const getClosestPointBySorting = (targetPoint: LatLngTuple, points: LatLngTuple[]): LatLngTuple | null => {
-				if (points.length === 0) return null;
+				if (points.length === 0) {
+					return null;
+				}
 				const targetLatLng = latLng(targetPoint);
 				const sortedPoints = points.slice().sort((a, b) => {
 					const distA = targetLatLng.distanceTo(latLng(a));

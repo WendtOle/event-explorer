@@ -4,7 +4,9 @@ export const detectLocationOutliers = (
 	locations: WayPoint[],
 	stdMultiplier: number = 2
 ): WayPoint[] => {
-	if (locations.length === 0) return [];
+	if (locations.length === 0) {
+		return [];
+	}
 
 	const centroid = locations.reduce(
 		(acc, { position: loc }) => ([

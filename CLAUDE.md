@@ -44,6 +44,7 @@ This is a Next.js 15 application that displays event/demonstration data on an in
 - **Imports**: Group by type (React, components, types, utils)
 - **Components**: Functional components with explicit return types, PascalCase naming
 - **Formatting**: 2-space indentation, single quotes, semicolons, explicit return types
+- **Control Structures**: Always use curly braces for if/else blocks, never use short syntax
 - **State Management**: React Query for server state, useState for UI state
 - **File Structure**: Use "use client" for client components, index.ts for clean exports
 
