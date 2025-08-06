@@ -47,11 +47,11 @@ export default function EventExplorer() {
 	return (
 		<div className="p-4 max-w-3xl mx-auto flex flex-col h-dvh gap-2">
 			<div className="flex flex-row justify-between items-center">
-				<h1 className="text-xl font-bold">Event Explorer</h1>
+				<h1 className="text-lg md:text-xl font-bold">Event Explorer</h1>
+				<h2 className="text-sm md:text-lg font-semibold">
+					{formatDate(selectedDate)}
+				</h2>
 			</div>
-			<h2 className="text-lg font-semibold text-center">
-				{formatDate(selectedDate)}
-			</h2>
 			<MapComponent
 				event={selectedEvent}
 				events={events}
