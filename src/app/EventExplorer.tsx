@@ -12,7 +12,7 @@ export default function EventExplorer() {
 	const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>();
 	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
-	const {events} = useEvents(getDateRange(selectedDate))
+	const {events, isLoading} = useEvents(getDateRange(selectedDate))
 
 	const toggleEvent = (event: EventType) => () => setSelectedEvent(state => {
 		if (state === undefined) {
@@ -74,6 +74,7 @@ export default function EventExplorer() {
 				events={events}
 				selectedEvent={selectedEvent}
 				onEventToggle={toggleEvent}
+				isLoading={isLoading}
 			/>
 		</div>
 	);

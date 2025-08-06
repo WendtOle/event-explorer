@@ -10,7 +10,7 @@ interface UseEventsProps {
 }
 
 export const useEvents = ({start, end}: UseEventsProps) => {
-    	const { data, fetchNextPage, hasNextPage, isFetchingNextPage  } = useInfiniteQuery({...searchByAddressInfiniteOptions({
+    	const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading  } = useInfiniteQuery({...searchByAddressInfiniteOptions({
 		body: {
 			country: "Deutschland",
 			city: "Berlin",
@@ -45,5 +45,5 @@ const events = useMemo(() => {
     return groupEvents(processed)
 }, [data])
 
-return {events: events}
+return {events: events, isLoading}
 }
