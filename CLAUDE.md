@@ -46,6 +46,7 @@ This is a Next.js 15 application that displays event/demonstration data on an in
 - **Formatting**: 2-space indentation, single quotes, semicolons, explicit return types
 - **Control Structures**: Always use curly braces for if/else blocks, never use short syntax
 - **Arrow Functions**: Use destructuring in simple arrow functions when accessing object properties (e.g., `topics.map(({ name_de }) => name_de)` instead of `topics.map(topic => topic.name_de)`)
+- **Component Design**: Strive for single responsibility principle - components should have one clear purpose. Keep display components focused on rendering, move data processing/filtering to appropriate preprocessing layers
 - **State Management**: React Query for server state, useState for UI state
 - **File Structure**: Use "use client" for client components, index.ts for clean exports
 
