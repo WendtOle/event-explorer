@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import MapComponent from "./Map";
-import { Event as EventComponent } from "./Event";
+import { EventList } from "./EventList";
 import { useEvents } from "./useDemosEvents";
 import { getDateRange } from "./timeUtils";
 import {Event as EventType} from "./useEvents";
@@ -70,16 +70,11 @@ export default function EventExplorer() {
 					direction="right"
 				/>
 			</div>
-			{events.length} Events
-			{events.length === 0 ? (
-				<p className="text-gray-500">Keine Events gefunden.</p>
-			) : (
-				<div className={`${events.length < 3 ? '' : 'flex-1'} grid gap-2 overflow-auto`} >
-					{events.map((e) => (
-						<EventComponent key={e.id} id={e.id + ""} onClick={toggleEvent(e)} event={e} selected={e.id === selectedEvent?.id} />
-					))}
-				</div>
-			)}
+			<EventList 
+				events={events}
+				selectedEvent={selectedEvent}
+				onEventToggle={toggleEvent}
+			/>
 		</div>
 	);
 }
