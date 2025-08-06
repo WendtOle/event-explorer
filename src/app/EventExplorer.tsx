@@ -3,16 +3,16 @@ import { useState } from "react";
 import MapComponent from "./Map";
 import { EventList } from "./EventList";
 import { useEvents } from "./useDemosEvents";
-import { getDateRange } from "./timeUtils";
 import {Event as EventType} from "./useEvents";
 import NavigationButton from "./NavigationButton";
+import { useDateNavigation } from "./useDateNavigation";
 
 
 export default function EventExplorer() {
 	const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>();
-	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+	const { goToPreviousDay, goToNextDay, dateRange, selectedDate } = useDateNavigation();
 
-	const {events, isLoading} = useEvents(getDateRange(selectedDate))
+	const {events, isLoading} = useEvents(dateRange)
 
 	const toggleEvent = (event: EventType) => () => setSelectedEvent(state => {
 		if (state === undefined) {
@@ -23,18 +23,6 @@ export default function EventExplorer() {
 		}
 		return undefined
 	})
-
-	const goToPreviousDay = () => {
-		const previousDay = new Date(selectedDate);
-		previousDay.setDate(previousDay.getDate() - 1);
-		setSelectedDate(previousDay);
-	}
-
-	const goToNextDay = () => {
-		const nextDay = new Date(selectedDate);
-		nextDay.setDate(nextDay.getDate() + 1);
-		setSelectedDate(nextDay);
-	}
 
 	const formatDate = (date: Date) => {
 		return date.toLocaleDateString('de-DE', { 
