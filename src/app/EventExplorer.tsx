@@ -24,22 +24,10 @@ export default function EventExplorer() {
 		return undefined
 	})
 
-	const formatDate = (date: Date) => {
-		return date.toLocaleDateString('de-DE', { 
-			weekday: 'long', 
-			year: 'numeric', 
-			month: 'long', 
-			day: 'numeric' 
-		});
-	}
-
 	return (
 		<div className="p-4 max-w-3xl mx-auto flex flex-col h-dvh gap-2">
 			<div className="flex flex-row justify-between items-center">
 				<h1 className="text-lg md:text-xl font-bold">Event Explorer</h1>
-				<h2 className="text-sm md:text-lg font-semibold">
-					{formatDate(selectedDate)}
-				</h2>
 			</div>
 			<MapComponent
 				event={selectedEvent}
