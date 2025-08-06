@@ -15,7 +15,7 @@ const getTime = (dateString: string) => {
     const hours = date.getHours();    
     const minutes = date.getMinutes(); 
 
-    return `${hours}:${minutes}`;
+    return `${hours}:${minutes.toString().padStart(2, '0')}`;
 }
 
 const getTimeRange = (start: string, end: string) => {
