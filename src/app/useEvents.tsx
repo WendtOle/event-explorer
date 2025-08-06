@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import type { LatLngBounds, LatLngTuple } from "leaflet";
 import { detectLocationOutliers } from "./getWithoutOutliers";
 
-export interface Event { id: string, time?: string; location: string; thema: string; date: string[]; way_points: WayPoint[], bounds: LatLngBounds }
+export interface Event { id: string, time?: string; location: string; thema: string; date: string[]; way_points: WayPoint[], bounds: LatLngBounds, topics: string[] }
 export type WayPoint = { text: string, position: LatLngTuple }
 
 interface Entry {

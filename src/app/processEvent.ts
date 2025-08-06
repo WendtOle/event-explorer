@@ -46,7 +46,8 @@ export const processEvent = (event: EventInDb): Event | undefined => {
         bounds: null as any,
         location: event.raw_location ?? "no_location",
         time: getTimeRange(event.start_time, event.end_time),
-        date: [getDate(event.start_time)]
+        date: [getDate(event.start_time)],
+        topics: event.topics.map(({ name_de }) => name_de).filter(topic => topic !== "Crawled Event")
     }
     return output
 }

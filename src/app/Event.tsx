@@ -2,6 +2,7 @@ import { Fragment, ReactElement } from "react"
 import { Event as EventType } from "./useEvents"
 import { isAfter, parse, format } from "date-fns";
 import { isEqual } from "date-fns/fp";
+import { TopicTags } from "./TopicTags";
 
 interface EventProps {
 	id: string;
@@ -60,6 +61,7 @@ export const Event = ({ id, selected, event, onClick }: EventProps) => {
 		<p>{event.way_points.length} Wegpunkte erkannt: </p>
 		<p>{keepPart}{withHighlighting.list}</p>
 	</>)
+
 	return (
 		<button
 			id={id}
@@ -77,6 +79,7 @@ export const Event = ({ id, selected, event, onClick }: EventProps) => {
 				{shortLocationString}
 			</div>}
 			{selected && expandedLocation}
+			<TopicTags topics={event.topics} limit={selected ? undefined : 3}/>
 		</button>
 	)
 }
