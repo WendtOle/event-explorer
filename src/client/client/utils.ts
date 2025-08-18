@@ -116,7 +116,9 @@ export const createQuerySerializer = <T = unknown>({
             value,
             ...array,
           });
-          if (serializedArray) search.push(serializedArray);
+          if (serializedArray) {
+            search.push(serializedArray);
+          }
         } else if (typeof value === 'object') {
           const serializedObject = serializeObjectParam({
             allowReserved,
@@ -126,14 +128,14 @@ export const createQuerySerializer = <T = unknown>({
             value: value as Record<string, unknown>,
             ...object,
           });
-          if (serializedObject) search.push(serializedObject);
+          if (serializedObject) {search.push(serializedObject);}
         } else {
           const serializedPrimitive = serializePrimitiveParam({
             allowReserved,
             name,
             value: value as string,
           });
-          if (serializedPrimitive) search.push(serializedPrimitive);
+          if (serializedPrimitive) {search.push(serializedPrimitive);}
         }
       }
     }

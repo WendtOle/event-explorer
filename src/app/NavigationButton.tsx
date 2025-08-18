@@ -1,5 +1,7 @@
 "use client"
 
+import { JSX } from "react";
+
 interface NavigationButtonProps {
   label: string;
   onClick: () => void;

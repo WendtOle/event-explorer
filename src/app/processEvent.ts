@@ -43,7 +43,6 @@ export const processEvent = (event: EventInDb): Event | undefined => {
         thema: event.description,
         id: simpleHash(event.description),
         way_points: getWayPoints(event), 
-        bounds: null as any,
         location: event.raw_location ?? "no_location",
         time: getTimeRange(event.start_time, event.end_time),
         date: [getDate(event.start_time)],

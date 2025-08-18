@@ -85,14 +85,13 @@ const MapComponent = ({ event, events, onMapChange, disableFlyTo, onEventClick }
 				}
 				)
 			}
-
 			if (disableFlyTo) {
 				return
 			}
 			if (way_points.length === 1) {
 				map?.flyTo(way_points[0].position, 13)
 			}
-			if (way_points.length > 1) {
+			if (way_points.length > 1 && bounds !== undefined) {
 				map?.flyToBounds(bounds)
 			}
 		})
@@ -120,7 +119,6 @@ const MapComponent = ({ event, events, onMapChange, disableFlyTo, onEventClick }
 			return () => {
 				map.off("moveend", onMoveEnd)
 				map.remove()
-
 			}
 		})
 	}, []);
