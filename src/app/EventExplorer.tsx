@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MapComponent from "./Map";
 import { EventList } from "./EventList";
 import { useEvents } from "./useDemosEvents";
@@ -13,6 +13,17 @@ export default function EventExplorer() {
 	const { goToPreviousDay, goToNextDay, goToToday, isToday, dateRange, formattedSelectedDate, previousDayLabel, nextDayLabel } = useDateNavigation();
 
 	const {events, isLoading} = useEvents(dateRange)
+
+	useEffect(() => {
+		if (!selectedEvent || !events.length) {
+			return;
+		}
+		
+		const eventExists = events.some(event => event.id === selectedEvent.id);
+		if (!eventExists) {
+			setSelectedEvent(undefined);
+		}
+	}, [selectedEvent, events]);
 
 	const toggleEvent = (event: EventType) => () => setSelectedEvent(state => {
 		if (state === undefined) {
