@@ -3,7 +3,7 @@
 import { Event as EventComponent } from "./Event";
 import { Event as EventType } from "./useEvents";
 import { EventSkeleton } from "./EventSkeleton";
-import { JSX } from "react";
+import { JSX, useEffect, useRef } from "react";
 
 interface EventListProps {
   events: EventType[];
@@ -14,7 +14,24 @@ interface EventListProps {
 }
 
 export const EventList = ({ events, selectedEvent, onEventToggle, isLoading, selectedDate }: EventListProps): JSX.Element => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const dateDisplay = <div className="text-right">{selectedDate}</div>;
+
+  useEffect(() => {
+    if (!selectedEvent || !containerRef.current) {
+      return;
+    }
+    
+    const selectedElement = containerRef.current.querySelector(`#event-${selectedEvent.id}`);
+    if (!selectedElement) {
+      return;
+    }
+    
+    selectedElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  }, [selectedEvent]);
 
   if (isLoading) {
       return (<>
@@ -38,11 +55,11 @@ export const EventList = ({ events, selectedEvent, onEventToggle, isLoading, sel
       {events.length === 0 ? (
         <p className="text-gray-500">Keine Events gefunden.</p>
       ) : (
-        <div className={`${events.length < 3 ? '' : 'flex-1'} grid gap-2 overflow-auto`}>
+        <div ref={containerRef} className={`${events.length < 3 ? '' : 'flex-1'} grid gap-2 overflow-auto`}>
           {events.map((e) => (
             <EventComponent
               key={e.id}
-              id={e.id + ""}
+              id={`event-${e.id}`}
               onClick={onEventToggle(e)}
               event={e}
               selected={e.id === selectedEvent?.id} />
