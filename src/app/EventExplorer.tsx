@@ -51,11 +51,11 @@ export default function EventExplorer() {
 					onClick={goToPreviousDay}
 					direction="left"
 				/>
-				<NavigationButton 
+				{!isToday() && <NavigationButton 
 					label="Heute"
 					onClick={goToToday}
 					selected={isToday()}
-				/>
+				/>}
 				<NavigationButton 
 					label={nextDayLabel}
 					onClick={goToNextDay}

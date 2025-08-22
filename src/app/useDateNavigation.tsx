@@ -59,8 +59,8 @@ export const useDateNavigation = () => {
 
   const dateRange = getDateRange(selectedDate);
   const formattedSelectedDate = formatShortDate(selectedDate);
-  const previousDayLabel = `Gestern, ${formatNavigationDate(getPreviousDay())}`;
-  const nextDayLabel = `Morgen, ${formatNavigationDate(getNextDay())}`;
+  const previousDayLabel = isToday() ? "Gestern" : formatNavigationDate(getPreviousDay());
+  const nextDayLabel = isToday() ? "Morgen" : formatNavigationDate(getNextDay());
 
   return {
     goToPreviousDay,
