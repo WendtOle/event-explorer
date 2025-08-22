@@ -40,7 +40,7 @@ export const EventList = ({ events, selectedEvent, onEventToggle, isLoading, sel
             {dateDisplay}
           </div>
           <div className="grid gap-2">
-            {Array.from({ length: 3 }).map((_, index) => (
+            {Array.from({ length: 2 }).map((_, index) => (
               <EventSkeleton key={index} />
             ))}
           </div>
