@@ -30,7 +30,6 @@ const getTimeRange = (start: string, end: string) => {
 const getWayPoints = (event: EventInDb): WayPoint[] => {
     const {geography, street} = event.locations[0]
     const [lon, lat] = geography.coordinates
-    console.log({street, full: event.raw_location, parsed: event.locations[0]})
     return [{text: `${street}`, position: [lat, lon]}]
 }
 
@@ -38,7 +37,6 @@ export const processEvent = (event: EventInDb): Event | undefined => {
     if (event.description === undefined || event.description === null) {
         return
     }
-    console.log({event})
     const output = {
         thema: event.description,
         id: simpleHash(event.description),

@@ -123,7 +123,7 @@ const MapComponent = ({ event, events, onMapChange, disableFlyTo, onEventClick }
 		})
 	}, []);
 	return (
-		<div className="w-full h-44 sm:h-52">
+		<div className="w-full h-44 2">
 			<div id="map"
 				style={{ height: "100%", width: "100%" }}
 			/>
