@@ -5,6 +5,7 @@ import { useEvents } from './useDemosEvents';
 import { Event as EventType } from '../types';
 import NavigationButton from './NavigationButton';
 import { useDateNavigation } from './useDateNavigation';
+import { Header } from './Header';
 
 export default function EventExplorer() {
   const [selectedEvent, setSelectedEvent] = useState<EventType | undefined>();
@@ -45,9 +46,7 @@ export default function EventExplorer() {
 
   return (
     <div className="p-4 max-w-3xl mx-auto flex flex-col h-dvh gap-2">
-      <div className="flex flex-row justify-between items-center">
-        <h1 className="text-lg md:text-xl font-bold">Event Explorer</h1>
-      </div>
+      <Header />
       <MapComponent
         event={selectedEvent}
         events={events}
