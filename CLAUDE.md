@@ -16,15 +16,15 @@ This ensures thoughtful architecture decisions and helps avoid refactoring later
 
 ## Commands
 
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production  
-- `npm run start` - Start production server
+- `npm run dev` - Start Vite development server
+- `npm run build` - Build for production with TypeScript check  
+- `npm run start` - Start production preview server
 - `npm run lint` - Run ESLint
 - `npm run openapi-ts` - Generate TypeScript client from OpenAPI specs at https://api.demonstrations.org/v1/openapi.json
 
 ## Architecture Overview
 
-This is a Next.js 15 application that displays event/demonstration data on an interactive map. The application follows a client-side heavy architecture with the following key components:
+This is a React + Vite + TypeScript + Tailwind CSS application that displays event/demonstration data on an interactive map. The application follows a client-side heavy architecture with the following key components:
 
 ### Data Flow
 - **API Client**: Auto-generated TypeScript client (`src/client/`) from OpenAPI specs using @hey-api/openapi-ts
@@ -32,7 +32,7 @@ This is a Next.js 15 application that displays event/demonstration data on an in
 - **Data Source**: Demonstrations API at `https://api.demonstrations.org`
 
 ### Core Components Structure
-- `src/app/page.tsx` → `Wrapper.tsx` → `EventExplorer.tsx` - Main application flow
+- `src/main.tsx` → `App.tsx` → `Wrapper.tsx` → `EventExplorer.tsx` - Main application flow
 - `EventExplorer` - Main container managing selected events and date navigation
 - `Map.tsx` - Leaflet-based interactive map with clustering support
 - `Event.tsx` - Event detail component
@@ -45,7 +45,7 @@ This is a Next.js 15 application that displays event/demonstration data on an in
 - Center defaults to Berlin coordinates `[52.5200, 13.4050]`
 
 ### Key Architectural Patterns
-- All interactive components use "use client" directive (App Router client components)
+- Standard React components (no "use client" directives needed)
 - TypeScript strict mode with explicit return types
 - React Query with persistence for caching API responses
 - Event-driven architecture with callback props for component communication
@@ -60,7 +60,7 @@ This is a Next.js 15 application that displays event/demonstration data on an in
 - **Arrow Functions**: Use destructuring in simple arrow functions when accessing object properties (e.g., `topics.map(({ name_de }) => name_de)` instead of `topics.map(topic => topic.name_de)`)
 - **Component Design**: Strive for single responsibility principle - components should have one clear purpose. Keep display components focused on rendering, move data processing/filtering to appropriate preprocessing layers
 - **State Management**: React Query for server state, useState for UI state
-- **File Structure**: Use "use client" for client components, index.ts for clean exports
+- **File Structure**: Standard React components, index.ts for clean exports
 
 ## OpenAPI Integration
 

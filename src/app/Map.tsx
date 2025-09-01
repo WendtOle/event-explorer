@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import type { LatLngBounds, LatLngTuple } from 'leaflet';
 import { Event, WayPoint } from "./useEvents";

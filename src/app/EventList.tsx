@@ -1,5 +1,3 @@
-"use client"
-
 import { Event as EventComponent } from "./Event";
 import { Event as EventType } from "./useEvents";
 import { EventSkeleton } from "./EventSkeleton";
