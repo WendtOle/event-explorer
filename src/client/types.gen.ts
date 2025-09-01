@@ -5,31 +5,31 @@
  * A schema for returning admin data.
  */
 export type AdminStatistics = {
-    /**
-     * Dangling Locations
-     */
-    dangling_locations: number;
-    /**
-     * Source Count
-     */
-    source_count: number;
-    /**
-     * Event Count
-     */
-    event_count: number;
-    /**
-     * User Count
-     */
-    user_count: number;
-    /**
-     * Current Vocab Size
-     */
-    current_vocab_size?: number | null;
-    /**
-     * Last Training Time
-     */
-    last_training_time?: string | null;
-    crawler_stats: CrawlerStatsInDb;
+  /**
+   * Dangling Locations
+   */
+  dangling_locations: number;
+  /**
+   * Source Count
+   */
+  source_count: number;
+  /**
+   * Event Count
+   */
+  event_count: number;
+  /**
+   * User Count
+   */
+  user_count: number;
+  /**
+   * Current Vocab Size
+   */
+  current_vocab_size?: number | null;
+  /**
+   * Last Training Time
+   */
+  last_training_time?: string | null;
+  crawler_stats: CrawlerStatsInDb;
 };
 
 /**
@@ -37,30 +37,30 @@ export type AdminStatistics = {
  * A schema for querying event analysis data.
  */
 export type AnalysisEventQuery = {
-    /**
-     * Start Time
-     */
-    start_time: string;
-    /**
-     * End Time
-     */
-    end_time: string;
-    /**
-     * Topic Ids
-     */
-    topic_ids?: Array<number>;
-    /**
-     * Type Ids
-     */
-    type_ids?: Array<number>;
-    /**
-     * Event Time
-     */
-    event_time: 'start' | 'create';
-    /**
-     * Interval
-     */
-    interval: 'day' | 'week' | 'month' | 'year';
+  /**
+   * Start Time
+   */
+  start_time: string;
+  /**
+   * End Time
+   */
+  end_time: string;
+  /**
+   * Topic Ids
+   */
+  topic_ids?: Array<number>;
+  /**
+   * Type Ids
+   */
+  type_ids?: Array<number>;
+  /**
+   * Event Time
+   */
+  event_time: 'start' | 'create';
+  /**
+   * Interval
+   */
+  interval: 'day' | 'week' | 'month' | 'year';
 };
 
 /**
@@ -68,27 +68,27 @@ export type AnalysisEventQuery = {
  * A result schema for an analysis query.
  */
 export type AnalysisEventResult = {
-    query: AnalysisEventQuery;
-    /**
-     * Time Series Times
-     */
-    time_series_times: Array<string>;
-    /**
-     * Time Series Values
-     */
-    time_series_values: Array<number>;
-    /**
-     * Density Map Latitudes
-     */
-    density_map_latitudes: Array<number>;
-    /**
-     * Density Map Longitudes
-     */
-    density_map_longitudes: Array<number>;
-    /**
-     * Density Map Values
-     */
-    density_map_values: Array<number>;
+  query: AnalysisEventQuery;
+  /**
+   * Time Series Times
+   */
+  time_series_times: Array<string>;
+  /**
+   * Time Series Values
+   */
+  time_series_values: Array<number>;
+  /**
+   * Density Map Latitudes
+   */
+  density_map_latitudes: Array<number>;
+  /**
+   * Density Map Longitudes
+   */
+  density_map_longitudes: Array<number>;
+  /**
+   * Density Map Values
+   */
+  density_map_values: Array<number>;
 };
 
 /**
@@ -96,14 +96,14 @@ export type AnalysisEventResult = {
  * Application settings i/o schema.
  */
 export type ApplicationSettingsInDb = {
-    /**
-     * Fetch Timeout Min
-     */
-    fetch_timeout_min: number;
-    /**
-     * Text Search Accuracy
-     */
-    text_search_accuracy: number;
+  /**
+   * Fetch Timeout Min
+   */
+  fetch_timeout_min: number;
+  /**
+   * Text Search Accuracy
+   */
+  text_search_accuracy: number;
 };
 
 /**
@@ -116,64 +116,64 @@ export type AvailableLanguages = 'de' | 'en';
  * Body_get_access_token_by_login_v1_user_get_token_post
  */
 export type BodyGetAccessTokenByLoginV1UserGetTokenPost = {
-    /**
-     * Grant Type
-     */
-    grant_type?: string | null;
-    /**
-     * Username
-     */
-    username: string;
-    /**
-     * Password
-     */
-    password: string;
-    /**
-     * Scope
-     */
-    scope?: string;
-    /**
-     * Client Id
-     */
-    client_id?: string | null;
-    /**
-     * Client Secret
-     */
-    client_secret?: string | null;
+  /**
+   * Grant Type
+   */
+  grant_type?: string | null;
+  /**
+   * Username
+   */
+  username: string;
+  /**
+   * Password
+   */
+  password: string;
+  /**
+   * Scope
+   */
+  scope?: string;
+  /**
+   * Client Id
+   */
+  client_id?: string | null;
+  /**
+   * Client Secret
+   */
+  client_secret?: string | null;
 };
 
 /**
  * Body_upload_document_v1_document_upload_post
  */
 export type BodyUploadDocumentV1DocumentUploadPost = {
-    /**
-     * File Data
-     */
-    file_data: Blob | File;
+  /**
+   * File Data
+   */
+  file_data: Blob | File;
 };
 
 /**
  * Body_upload_excel_v1_admin_upload_excel_post
  */
 export type BodyUploadExcelV1AdminUploadExcelPost = {
-    /**
-     * File
-     */
-    file: Blob | File;
-    /**
-     * Topic Ids
-     */
-    topic_ids: Array<number>;
+  /**
+   * File
+   */
+  file: Blob | File;
+  /**
+   * Topic Ids
+   */
+  topic_ids: Array<number>;
 };
 
 /**
  * Body_upsert_title_image_v1_source__source_id__title_image_post
  */
 export type BodyUpsertTitleImageV1SourceSourceIdTitleImagePost = {
-    /**
-     * File Data
-     */
-    file_data: Blob | File;
+  /**
+   * File Data
+   */
+  file_data: Blob | File;
 };
 
 /**
@@ -181,14 +181,14 @@ export type BodyUpsertTitleImageV1SourceSourceIdTitleImagePost = {
  * A schema for scheduling cleanup tasks.
  */
 export type CleanupTasks = {
-    /**
-     * Cleanup Dangling Locations
-     */
-    cleanup_dangling_locations?: boolean;
-    /**
-     * Retrain Tagging Models
-     */
-    retrain_tagging_models?: boolean;
+  /**
+   * Cleanup Dangling Locations
+   */
+  cleanup_dangling_locations?: boolean;
+  /**
+   * Retrain Tagging Models
+   */
+  retrain_tagging_models?: boolean;
 };
 
 /**
@@ -196,14 +196,14 @@ export type CleanupTasks = {
  * A schema for returning available countries.
  */
 export type CountryInDb = {
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
 };
 
 /**
@@ -211,51 +211,56 @@ export type CountryInDb = {
  * Application settings i/o schema.
  */
 export type CrawlTargetStats = {
-    /**
-     * Name
-     */
-    name: string;
-    /**
-     * Detected Events
-     */
-    detected_events?: number;
-    /**
-     * Updated Events
-     */
-    updated_events?: number;
-    /**
-     * Created Events
-     */
-    created_events?: number;
-    /**
-     * Cleaned Events
-     */
-    cleaned_events?: number;
-    /**
-     * Skipped Events
-     */
-    skipped_events?: {
-        [key in CrawlerError]?: number;
-    };
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Detected Events
+   */
+  detected_events?: number;
+  /**
+   * Updated Events
+   */
+  updated_events?: number;
+  /**
+   * Created Events
+   */
+  created_events?: number;
+  /**
+   * Cleaned Events
+   */
+  cleaned_events?: number;
+  /**
+   * Skipped Events
+   */
+  skipped_events?: {
+    [key in CrawlerError]?: number;
+  };
 };
 
 /**
  * CrawlerError
  * Reflects the status of a request.
  */
-export type CrawlerError = 'time_parsing' | 'location_parsing' | 'topic_parsing' | 'data_parsing' | 'not_approved';
+export type CrawlerError =
+  | 'time_parsing'
+  | 'location_parsing'
+  | 'topic_parsing'
+  | 'data_parsing'
+  | 'not_approved';
 
 /**
  * CrawlerStatsInDB
  * Application settings i/o schema.
  */
 export type CrawlerStatsInDb = {
-    /**
-     * Last Pass Stats
-     */
-    last_pass_stats: {
-        [key: string]: CrawlTargetStats;
-    };
+  /**
+   * Last Pass Stats
+   */
+  last_pass_stats: {
+    [key: string]: CrawlTargetStats;
+  };
 };
 
 /**
@@ -263,58 +268,58 @@ export type CrawlerStatsInDb = {
  * API input schema to search an Event by address.
  */
 export type EventAddressSearch = {
-    /**
-     * Name
-     */
-    name?: string | null;
-    /**
-     * Start Time Start
-     */
-    start_time_start?: string | null;
-    /**
-     * Start Time End
-     */
-    start_time_end?: string | null;
-    /**
-     * End Time Start
-     */
-    end_time_start?: string | null;
-    /**
-     * End Time End
-     */
-    end_time_end?: string | null;
-    /**
-     * Type Ids
-     */
-    type_ids?: Array<number>;
-    /**
-     * Topic Ids
-     */
-    topic_ids?: Array<number>;
-    /**
-     * Organiser Ids
-     */
-    organiser_ids?: Array<number>;
-    /**
-     * Limit
-     */
-    limit?: number;
-    /**
-     * Offset
-     */
-    offset?: number;
-    /**
-     * Country
-     */
-    country: string;
-    /**
-     * City
-     */
-    city: string;
-    /**
-     * Zip Code
-     */
-    zip_code: string;
+  /**
+   * Name
+   */
+  name?: string | null;
+  /**
+   * Start Time Start
+   */
+  start_time_start?: string | null;
+  /**
+   * Start Time End
+   */
+  start_time_end?: string | null;
+  /**
+   * End Time Start
+   */
+  end_time_start?: string | null;
+  /**
+   * End Time End
+   */
+  end_time_end?: string | null;
+  /**
+   * Type Ids
+   */
+  type_ids?: Array<number>;
+  /**
+   * Topic Ids
+   */
+  topic_ids?: Array<number>;
+  /**
+   * Organiser Ids
+   */
+  organiser_ids?: Array<number>;
+  /**
+   * Limit
+   */
+  limit?: number;
+  /**
+   * Offset
+   */
+  offset?: number;
+  /**
+   * Country
+   */
+  country: string;
+  /**
+   * City
+   */
+  city: string;
+  /**
+   * Zip Code
+   */
+  zip_code: string;
 };
 
 /**
@@ -322,51 +327,51 @@ export type EventAddressSearch = {
  * API input schema to create an Event.
  */
 export type EventCreate = {
-    /**
-     * Name
-     */
-    name: string;
-    /**
-     * Short Description
-     */
-    short_description?: string | null;
-    /**
-     * Description
-     */
-    description?: string | null;
-    /**
-     * Url
-     */
-    url?: string | null;
-    /**
-     * Start Time
-     */
-    start_time: string;
-    /**
-     * End Time
-     */
-    end_time: string;
-    reoccurring?: ReoccurringEventPeriod;
-    /**
-     * Reoccurring Count
-     */
-    reoccurring_count?: number;
-    /**
-     * Type Id
-     */
-    type_id: number;
-    /**
-     * Topic Ids
-     */
-    topic_ids: Array<number>;
-    /**
-     * Organising Source Id
-     */
-    organising_source_id: number;
-    /**
-     * Locations
-     */
-    locations: Array<LocationCreate>;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Short Description
+   */
+  short_description?: string | null;
+  /**
+   * Description
+   */
+  description?: string | null;
+  /**
+   * Url
+   */
+  url?: string | null;
+  /**
+   * Start Time
+   */
+  start_time: string;
+  /**
+   * End Time
+   */
+  end_time: string;
+  reoccurring?: ReoccurringEventPeriod;
+  /**
+   * Reoccurring Count
+   */
+  reoccurring_count?: number;
+  /**
+   * Type Id
+   */
+  type_id: number;
+  /**
+   * Topic Ids
+   */
+  topic_ids: Array<number>;
+  /**
+   * Organising Source Id
+   */
+  organising_source_id: number;
+  /**
+   * Locations
+   */
+  locations: Array<LocationCreate>;
 };
 
 /**
@@ -374,71 +379,71 @@ export type EventCreate = {
  * API return schema of an Event.
  */
 export type EventInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Created
-     */
-    created: string;
-    /**
-     * Updated
-     */
-    updated: string;
-    /**
-     * Name
-     */
-    name: string;
-    /**
-     * Slug
-     */
-    slug: string;
-    /**
-     * Short Description
-     */
-    short_description?: string | null;
-    /**
-     * Description
-     */
-    description?: string | null;
-    /**
-     * Url
-     */
-    url?: string | null;
-    /**
-     * Start Time
-     */
-    start_time: string;
-    /**
-     * End Time
-     */
-    end_time: string;
-    /**
-     * Locations
-     */
-    locations: Array<LocationInDb>;
-    type: EventTypeInDb;
-    /**
-     * Topics
-     */
-    topics: Array<TopicInDb>;
-    /**
-     * Organising Source Id
-     */
-    organising_source_id: number;
-    /**
-     * Raw Location
-     */
-    raw_location?: string | null;
-    /**
-     * Raw Estimated Participants
-     */
-    raw_estimated_participants?: string | null;
-    /**
-     * Raw Organiser
-     */
-    raw_organiser?: string | null;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Created
+   */
+  created: string;
+  /**
+   * Updated
+   */
+  updated: string;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Slug
+   */
+  slug: string;
+  /**
+   * Short Description
+   */
+  short_description?: string | null;
+  /**
+   * Description
+   */
+  description?: string | null;
+  /**
+   * Url
+   */
+  url?: string | null;
+  /**
+   * Start Time
+   */
+  start_time: string;
+  /**
+   * End Time
+   */
+  end_time: string;
+  /**
+   * Locations
+   */
+  locations: Array<LocationInDb>;
+  type: EventTypeInDb;
+  /**
+   * Topics
+   */
+  topics: Array<TopicInDb>;
+  /**
+   * Organising Source Id
+   */
+  organising_source_id: number;
+  /**
+   * Raw Location
+   */
+  raw_location?: string | null;
+  /**
+   * Raw Estimated Participants
+   */
+  raw_estimated_participants?: string | null;
+  /**
+   * Raw Organiser
+   */
+  raw_organiser?: string | null;
 };
 
 /**
@@ -446,58 +451,58 @@ export type EventInDb = {
  * API input schema to search an Event by perimeter.
  */
 export type EventPerimeterSearch = {
-    /**
-     * Name
-     */
-    name?: string | null;
-    /**
-     * Start Time Start
-     */
-    start_time_start?: string | null;
-    /**
-     * Start Time End
-     */
-    start_time_end?: string | null;
-    /**
-     * End Time Start
-     */
-    end_time_start?: string | null;
-    /**
-     * End Time End
-     */
-    end_time_end?: string | null;
-    /**
-     * Type Ids
-     */
-    type_ids?: Array<number>;
-    /**
-     * Topic Ids
-     */
-    topic_ids?: Array<number>;
-    /**
-     * Organiser Ids
-     */
-    organiser_ids?: Array<number>;
-    /**
-     * Limit
-     */
-    limit?: number;
-    /**
-     * Offset
-     */
-    offset?: number;
-    /**
-     * Latitude
-     */
-    latitude: number;
-    /**
-     * Longitude
-     */
-    longitude: number;
-    /**
-     * Radius Km
-     */
-    radius_km: number;
+  /**
+   * Name
+   */
+  name?: string | null;
+  /**
+   * Start Time Start
+   */
+  start_time_start?: string | null;
+  /**
+   * Start Time End
+   */
+  start_time_end?: string | null;
+  /**
+   * End Time Start
+   */
+  end_time_start?: string | null;
+  /**
+   * End Time End
+   */
+  end_time_end?: string | null;
+  /**
+   * Type Ids
+   */
+  type_ids?: Array<number>;
+  /**
+   * Topic Ids
+   */
+  topic_ids?: Array<number>;
+  /**
+   * Organiser Ids
+   */
+  organiser_ids?: Array<number>;
+  /**
+   * Limit
+   */
+  limit?: number;
+  /**
+   * Offset
+   */
+  offset?: number;
+  /**
+   * Latitude
+   */
+  latitude: number;
+  /**
+   * Longitude
+   */
+  longitude: number;
+  /**
+   * Radius Km
+   */
+  radius_km: number;
 };
 
 /**
@@ -505,14 +510,14 @@ export type EventPerimeterSearch = {
  * API input schema to create an Event Type.
  */
 export type EventTypeCreate = {
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
 };
 
 /**
@@ -520,18 +525,18 @@ export type EventTypeCreate = {
  * API output schema of an Event Type.
  */
 export type EventTypeInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
 };
 
 /**
@@ -539,14 +544,14 @@ export type EventTypeInDb = {
  * API input schema to update an Event Type.
  */
 export type EventTypeUpdate = {
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
 };
 
 /**
@@ -554,56 +559,56 @@ export type EventTypeUpdate = {
  * API input schema to update an Event.
  */
 export type EventUpdate = {
-    /**
-     * Name
-     */
-    name?: string | null;
-    /**
-     * Short Description
-     */
-    short_description?: string | null;
-    /**
-     * Description
-     */
-    description?: string | null;
-    /**
-     * Url
-     */
-    url?: string | null;
-    /**
-     * Start Time
-     */
-    start_time?: string | null;
-    /**
-     * End Time
-     */
-    end_time?: string | null;
-    /**
-     * Locations
-     */
-    locations?: Array<LocationCreate> | null;
-    /**
-     * Type Id
-     */
-    type_id?: number | null;
-    /**
-     * Topic Ids
-     */
-    topic_ids?: Array<number>;
-    /**
-     * Organising Source Id
-     */
-    organising_source_id?: number | null;
+  /**
+   * Name
+   */
+  name?: string | null;
+  /**
+   * Short Description
+   */
+  short_description?: string | null;
+  /**
+   * Description
+   */
+  description?: string | null;
+  /**
+   * Url
+   */
+  url?: string | null;
+  /**
+   * Start Time
+   */
+  start_time?: string | null;
+  /**
+   * End Time
+   */
+  end_time?: string | null;
+  /**
+   * Locations
+   */
+  locations?: Array<LocationCreate> | null;
+  /**
+   * Type Id
+   */
+  type_id?: number | null;
+  /**
+   * Topic Ids
+   */
+  topic_ids?: Array<number>;
+  /**
+   * Organising Source Id
+   */
+  organising_source_id?: number | null;
 };
 
 /**
  * HTTPValidationError
  */
 export type HttpValidationError = {
-    /**
-     * Detail
-     */
-    detail?: Array<ValidationError>;
+  /**
+   * Detail
+   */
+  detail?: Array<ValidationError>;
 };
 
 /**
@@ -611,34 +616,34 @@ export type HttpValidationError = {
  * API input schema to create an Information.
  */
 export type InformationCreate = {
-    /**
-     * Name Native
-     */
-    name_native: string;
-    /**
-     * Name English
-     */
-    name_english?: string | null;
-    /**
-     * Url Native
-     */
-    url_native: string;
-    /**
-     * Url English
-     */
-    url_english?: string | null;
-    /**
-     * Country
-     */
-    country: string;
-    /**
-     * City
-     */
-    city: string;
-    /**
-     * Zip Code
-     */
-    zip_code: string;
+  /**
+   * Name Native
+   */
+  name_native: string;
+  /**
+   * Name English
+   */
+  name_english?: string | null;
+  /**
+   * Url Native
+   */
+  url_native: string;
+  /**
+   * Url English
+   */
+  url_english?: string | null;
+  /**
+   * Country
+   */
+  country: string;
+  /**
+   * City
+   */
+  city: string;
+  /**
+   * Zip Code
+   */
+  zip_code: string;
 };
 
 /**
@@ -646,42 +651,42 @@ export type InformationCreate = {
  * API return schema of an Information.
  */
 export type InformationInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Name Native
-     */
-    name_native: string;
-    /**
-     * Name English
-     */
-    name_english?: string | null;
-    /**
-     * Url Native
-     */
-    url_native: string;
-    /**
-     * Url English
-     */
-    url_english?: string | null;
-    /**
-     * Country
-     */
-    country: string;
-    /**
-     * City
-     */
-    city: string;
-    /**
-     * Zip Code
-     */
-    zip_code: string;
-    /**
-     * Created
-     */
-    created: string;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Name Native
+   */
+  name_native: string;
+  /**
+   * Name English
+   */
+  name_english?: string | null;
+  /**
+   * Url Native
+   */
+  url_native: string;
+  /**
+   * Url English
+   */
+  url_english?: string | null;
+  /**
+   * Country
+   */
+  country: string;
+  /**
+   * City
+   */
+  city: string;
+  /**
+   * Zip Code
+   */
+  zip_code: string;
+  /**
+   * Created
+   */
+  created: string;
 };
 
 /**
@@ -689,26 +694,26 @@ export type InformationInDb = {
  * API input schema to search an Information.
  */
 export type InformationQuery = {
-    /**
-     * Country
-     */
-    country: string;
-    /**
-     * City
-     */
-    city?: string;
-    /**
-     * Zip Code
-     */
-    zip_code?: string | null;
-    /**
-     * Limit
-     */
-    limit?: number;
-    /**
-     * Offset
-     */
-    offset?: number;
+  /**
+   * Country
+   */
+  country: string;
+  /**
+   * City
+   */
+  city?: string;
+  /**
+   * Zip Code
+   */
+  zip_code?: string | null;
+  /**
+   * Limit
+   */
+  limit?: number;
+  /**
+   * Offset
+   */
+  offset?: number;
 };
 
 /**
@@ -716,34 +721,34 @@ export type InformationQuery = {
  * API input schema to update an Information.
  */
 export type InformationUpdate = {
-    /**
-     * Name Native
-     */
-    name_native?: string | null;
-    /**
-     * Name English
-     */
-    name_english?: string | null;
-    /**
-     * Url Native
-     */
-    url_native?: string | null;
-    /**
-     * Url English
-     */
-    url_english?: string | null;
-    /**
-     * Country
-     */
-    country?: string | null;
-    /**
-     * City
-     */
-    city?: string | null;
-    /**
-     * Zip Code
-     */
-    zip_code?: string | null;
+  /**
+   * Name Native
+   */
+  name_native?: string | null;
+  /**
+   * Name English
+   */
+  name_english?: string | null;
+  /**
+   * Url Native
+   */
+  url_native?: string | null;
+  /**
+   * Url English
+   */
+  url_english?: string | null;
+  /**
+   * Country
+   */
+  country?: string | null;
+  /**
+   * City
+   */
+  city?: string | null;
+  /**
+   * Zip Code
+   */
+  zip_code?: string | null;
 };
 
 /**
@@ -751,16 +756,16 @@ export type InformationUpdate = {
  * API input schema of an Image.
  */
 export type InternalDocumentInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Display Name
-     */
-    display_name: string;
-    language: AvailableLanguages;
-    type: InternalDocumentType;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Display Name
+   */
+  display_name: string;
+  language: AvailableLanguages;
+  type: InternalDocumentType;
 };
 
 /**
@@ -774,22 +779,22 @@ export type InternalDocumentType = 'financial report' | 'constitution';
  * API return schema of an Event.
  */
 export type ListEventQuery = {
-    /**
-     * Sorting Key
-     */
-    sorting_key: 'id' | 'created' | 'name' | 'start_time';
-    /**
-     * Sorting Direction
-     */
-    sorting_direction: 'asc' | 'desc';
-    /**
-     * Offset
-     */
-    offset: number;
-    /**
-     * Limit
-     */
-    limit: number;
+  /**
+   * Sorting Key
+   */
+  sorting_key: 'id' | 'created' | 'name' | 'start_time';
+  /**
+   * Sorting Direction
+   */
+  sorting_direction: 'asc' | 'desc';
+  /**
+   * Offset
+   */
+  offset: number;
+  /**
+   * Limit
+   */
+  limit: number;
 };
 
 /**
@@ -797,15 +802,15 @@ export type ListEventQuery = {
  * API return schema of an Event.
  */
 export type ListEventResult = {
-    /**
-     * Events
-     */
-    events: Array<EventInDb>;
-    query: ListEventQuery;
-    /**
-     * Total Event Count
-     */
-    total_event_count: number;
+  /**
+   * Events
+   */
+  events: Array<EventInDb>;
+  query: ListEventQuery;
+  /**
+   * Total Event Count
+   */
+  total_event_count: number;
 };
 
 /**
@@ -813,35 +818,35 @@ export type ListEventResult = {
  * API input schema to create a Location.
  */
 export type LocationCreate = {
-    /**
-     * Latitude
-     */
-    latitude?: number | null;
-    /**
-     * Longitude
-     */
-    longitude?: number | null;
-    /**
-     * Country
-     */
-    country?: string | null;
-    /**
-     * City
-     */
-    city?: string | null;
-    /**
-     * Street
-     */
-    street?: string | null;
-    /**
-     * Zip Code
-     */
-    zip_code?: string | null;
-    /**
-     * House Number
-     */
-    house_number?: string | null;
-    address_language?: AvailableLanguages;
+  /**
+   * Latitude
+   */
+  latitude?: number | null;
+  /**
+   * Longitude
+   */
+  longitude?: number | null;
+  /**
+   * Country
+   */
+  country?: string | null;
+  /**
+   * City
+   */
+  city?: string | null;
+  /**
+   * Street
+   */
+  street?: string | null;
+  /**
+   * Zip Code
+   */
+  zip_code?: string | null;
+  /**
+   * House Number
+   */
+  house_number?: string | null;
+  address_language?: AvailableLanguages;
 };
 
 /**
@@ -849,31 +854,31 @@ export type LocationCreate = {
  * API return schema of a Location.
  */
 export type LocationInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Country
-     */
-    country?: string | null;
-    /**
-     * City
-     */
-    city?: string | null;
-    /**
-     * Street
-     */
-    street?: string | null;
-    /**
-     * Zip Code
-     */
-    zip_code?: string | null;
-    /**
-     * House Number
-     */
-    house_number?: string | null;
-    geography: Point;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Country
+   */
+  country?: string | null;
+  /**
+   * City
+   */
+  city?: string | null;
+  /**
+   * Street
+   */
+  street?: string | null;
+  /**
+   * Zip Code
+   */
+  zip_code?: string | null;
+  /**
+   * House Number
+   */
+  house_number?: string | null;
+  geography: Point;
 };
 
 /**
@@ -881,35 +886,35 @@ export type LocationInDb = {
  * API input schema to update a Location.
  */
 export type LocationUpdate = {
-    /**
-     * Latitude
-     */
-    latitude?: number | null;
-    /**
-     * Longitude
-     */
-    longitude?: number | null;
-    /**
-     * Country
-     */
-    country?: string | null;
-    /**
-     * City
-     */
-    city?: string | null;
-    /**
-     * Street
-     */
-    street?: string | null;
-    /**
-     * Zip Code
-     */
-    zip_code?: string | null;
-    /**
-     * House Number
-     */
-    house_number?: string | null;
-    address_language?: AvailableLanguages;
+  /**
+   * Latitude
+   */
+  latitude?: number | null;
+  /**
+   * Longitude
+   */
+  longitude?: number | null;
+  /**
+   * Country
+   */
+  country?: string | null;
+  /**
+   * City
+   */
+  city?: string | null;
+  /**
+   * Street
+   */
+  street?: string | null;
+  /**
+   * Zip Code
+   */
+  zip_code?: string | null;
+  /**
+   * House Number
+   */
+  house_number?: string | null;
+  address_language?: AvailableLanguages;
 };
 
 /**
@@ -917,10 +922,10 @@ export type LocationUpdate = {
  * API input schema of an Image.
  */
 export type Message = {
-    /**
-     * Detail
-     */
-    detail: string;
+  /**
+   * Detail
+   */
+  detail: string;
 };
 
 /**
@@ -928,22 +933,2871 @@ export type Message = {
  * API input schema to search an Event.
  */
 export type NotificationFetchQuery = {
+  /**
+   * Event Name
+   */
+  event_name?: string | null;
+  /**
+   * Type Ids
+   */
+  type_ids?: Array<number>;
+  /**
+   * Topic Ids
+   */
+  topic_ids?: Array<number>;
+  /**
+   * Organiser Ids
+   */
+  organiser_ids?: Array<number>;
+  /**
+   * Latitude
+   */
+  latitude?: number | null;
+  /**
+   * Longitude
+   */
+  longitude?: number | null;
+  /**
+   * Radius Km
+   */
+  radius_km?: number | null;
+  /**
+   * Country
+   */
+  country?: string | null;
+  /**
+   * City
+   */
+  city?: string | null;
+  /**
+   * Zip Code
+   */
+  zip_code?: string | null;
+};
+
+/**
+ * NotificationFetchResponse
+ * A schema to request an event for tagging.
+ */
+export type NotificationFetchResponse = {
+  /**
+   * Event Ids
+   */
+  event_ids: Array<number>;
+  /**
+   * Next Fetch
+   */
+  next_fetch: string;
+};
+
+/**
+ * Point
+ * Point Model
+ */
+export type Point = {
+  /**
+   * Bbox
+   */
+  bbox?:
+    | [number, number, number, number]
+    | [number, number, number, number, number, number]
+    | null;
+  /**
+   * Type
+   */
+  type: 'Point';
+  /**
+   * Coordinates
+   */
+  coordinates: Position2D | Position3D;
+};
+
+export type Position2D = [number, number];
+
+export type Position3D = [number, number, number];
+
+/**
+ * QuickTagEvent
+ * API return schema of an Event.
+ */
+export type QuickTagEvent = {
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Description
+   */
+  description?: string | null;
+};
+
+/**
+ * QuickTagPrediction
+ * A schema to return a prediction of topics.
+ */
+export type QuickTagPrediction = {
+  event: QuickTagEvent;
+  /**
+   * Prediction
+   */
+  prediction: {
+    [key: string]: number;
+  };
+  /**
+   * Current Count
+   */
+  current_count: number;
+  /**
+   * Left Count
+   */
+  left_count: number;
+};
+
+/**
+ * QuickTagRequest
+ * A schema to request an event for tagging.
+ */
+export type QuickTagRequest = {
+  /**
+   * Included Topic Ids
+   */
+  included_topic_ids: Array<number>;
+  /**
+   * Mode
+   */
+  mode: 'closest_future' | 'oldest' | 'newest';
+};
+
+/**
+ * ReoccurringEventPeriod
+ * Supported time periods for reoccurring events.
+ */
+export type ReoccurringEventPeriod =
+  | 'none'
+  | 'weekly'
+  | 'bi-weekly'
+  | 'monthly';
+
+/**
+ * RequestStatus
+ * Reflects the status of a request.
+ */
+export type RequestStatus = 'pending' | 'approved' | 'denied';
+
+/**
+ * SourceAddressSearch
+ * API input schema to search an Source by address.
+ */
+export type SourceAddressSearch = {
+  /**
+   * Name
+   */
+  name?: string | null;
+  /**
+   * Country
+   */
+  country: string;
+  /**
+   * City
+   */
+  city: string;
+  /**
+   * Zip Code
+   */
+  zip_code: string;
+  /**
+   * Type Ids
+   */
+  type_ids?: Array<number>;
+  /**
+   * Topic Ids
+   */
+  topic_ids?: Array<number>;
+  /**
+   * Limit
+   */
+  limit?: number;
+  /**
+   * Offset
+   */
+  offset?: number;
+};
+
+/**
+ * SourceCreate
+ * API input schema to create an Source.
+ */
+export type SourceCreate = {
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Description
+   */
+  description: string;
+  /**
+   * Url
+   */
+  url?: string | null;
+  /**
+   * Public Mail Contact
+   */
+  public_mail_contact?: string | null;
+  /**
+   * Internal Point Of Contact
+   */
+  internal_point_of_contact: string;
+  location: LocationCreate;
+  /**
+   * Type Id
+   */
+  type_id: number;
+  /**
+   * Topic Ids
+   */
+  topic_ids: Array<number>;
+};
+
+/**
+ * SourceInDB
+ * API return schema of an Source.
+ */
+export type SourceInDb = {
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Slug
+   */
+  slug: string;
+  /**
+   * Description
+   */
+  description?: string | null;
+  /**
+   * Url
+   */
+  url?: string | null;
+  /**
+   * Public Mail Contact
+   */
+  public_mail_contact?: string | null;
+  location: LocationInDb;
+  type: SourceTypeInDb;
+  /**
+   * Topics
+   */
+  topics: Array<TopicInDb>;
+  /**
+   * Created
+   */
+  created: string;
+  approved: RequestStatus;
+};
+
+/**
+ * SourceTypeCreate
+ * API input schema to create an Source Type.
+ */
+export type SourceTypeCreate = {
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
+};
+
+/**
+ * SourceTypeInDB
+ * API return schema of an Source Type.
+ */
+export type SourceTypeInDb = {
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
+};
+
+/**
+ * SourceTypeUpdate
+ * API input schema to update an Source Type.
+ */
+export type SourceTypeUpdate = {
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
+};
+
+/**
+ * SourceUpdateUser
+ * API input schema to update an Source as source admin.
+ */
+export type SourceUpdateUser = {
+  /**
+   * Name
+   */
+  name?: string | null;
+  /**
+   * Description
+   */
+  description?: string | null;
+  /**
+   * Url
+   */
+  url?: string | null;
+  /**
+   * Public Mail Contact
+   */
+  public_mail_contact?: string | null;
+  /**
+   * Internal Point Of Contact
+   */
+  internal_point_of_contact?: string | null;
+  location?: LocationUpdate | null;
+  /**
+   * Type Id
+   */
+  type_id?: number | null;
+  /**
+   * Topic Ids
+   */
+  topic_ids?: Array<number> | null;
+};
+
+/**
+ * Token
+ * API output schema for JWTs.
+ */
+export type Token = {
+  /**
+   * Access Token
+   */
+  access_token: string;
+  /**
+   * Token Type
+   */
+  token_type: string;
+};
+
+/**
+ * TopicCreate
+ * API input schema for creating a Topic.
+ */
+export type TopicCreate = {
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
+};
+
+/**
+ * TopicInDB
+ * API output schema for a Topic.
+ */
+export type TopicInDb = {
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
+};
+
+/**
+ * TopicUpdate
+ * API input schema for updating a Topic.
+ */
+export type TopicUpdate = {
+  /**
+   * Name En
+   */
+  name_en: string;
+  /**
+   * Name De
+   */
+  name_de: string;
+};
+
+/**
+ * UserInDB
+ * API return schema of a user.
+ */
+export type UserInDb = {
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Username
+   */
+  username: string;
+  /**
+   * Email
+   */
+  email: string;
+  /**
+   * Active
+   */
+  active: boolean;
+  /**
+   * Admin
+   */
+  admin: boolean;
+  /**
+   * Receive Newsletter
+   */
+  receive_newsletter: boolean;
+};
+
+/**
+ * UserMail
+ * API input schema for email addresses.
+ */
+export type UserMail = {
+  /**
+   * Email
+   */
+  email: string;
+};
+
+/**
+ * UserSuperUserUpdate
+ * API input schema to update a user as a superuser.
+ */
+export type UserSuperUserUpdate = {
+  /**
+   * Email
+   */
+  email?: string | null;
+  /**
+   * Username
+   */
+  username?: string | null;
+  /**
+   * Password
+   */
+  password?: string | null;
+  /**
+   * Receive Newsletter
+   */
+  receive_newsletter?: boolean | null;
+  /**
+   * Active
+   */
+  active?: boolean | null;
+  /**
+   * Admin
+   */
+  admin?: boolean | null;
+  /**
+   * Verified
+   */
+  verified?: boolean | null;
+};
+
+/**
+ * UserUpdate
+ * API input schema to update a user.
+ */
+export type UserUpdate = {
+  /**
+   * Email
+   */
+  email?: string | null;
+  /**
+   * Username
+   */
+  username?: string | null;
+  /**
+   * Password
+   */
+  password?: string | null;
+  /**
+   * Receive Newsletter
+   */
+  receive_newsletter?: boolean | null;
+};
+
+/**
+ * ValidationError
+ */
+export type ValidationError = {
+  /**
+   * Location
+   */
+  loc: Array<string | number>;
+  /**
+   * Message
+   */
+  msg: string;
+  /**
+   * Error Type
+   */
+  type: string;
+};
+
+export type NewEventData = {
+  body: EventCreate;
+  path?: never;
+  query?: never;
+  url: '/v1/event/new';
+};
+
+export type NewEventErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type NewEventError = NewEventErrors[keyof NewEventErrors];
+
+export type NewEventResponses = {
+  /**
+   * Response New Event V1 Event New Post
+   * Successful Response
+   */
+  200: Array<EventInDb>;
+};
+
+export type NewEventResponse = NewEventResponses[keyof NewEventResponses];
+
+export type PaginatedAllData = {
+  body: ListEventQuery;
+  headers?: {
     /**
-     * Event Name
+     * User-Agent
      */
-    event_name?: string | null;
+    'user-agent'?: string | null;
+  };
+  path?: never;
+  query?: never;
+  url: '/v1/event/all';
+};
+
+export type PaginatedAllErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type PaginatedAllError = PaginatedAllErrors[keyof PaginatedAllErrors];
+
+export type PaginatedAllResponses = {
+  /**
+   * Successful Response
+   */
+  200: ListEventResult;
+};
+
+export type PaginatedAllResponse =
+  PaginatedAllResponses[keyof PaginatedAllResponses];
+
+export type SearchByPerimeterData = {
+  body: EventPerimeterSearch;
+  headers?: {
+    /**
+     * User-Agent
+     */
+    'user-agent'?: string | null;
+  };
+  path?: never;
+  query?: never;
+  url: '/v1/event/perimeter-search';
+};
+
+export type SearchByPerimeterErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type SearchByPerimeterError =
+  SearchByPerimeterErrors[keyof SearchByPerimeterErrors];
+
+export type SearchByPerimeterResponses = {
+  /**
+   * Response Search By Perimeter V1 Event Perimeter Search Post
+   * Successful Response
+   */
+  200: Array<EventInDb>;
+};
+
+export type SearchByPerimeterResponse =
+  SearchByPerimeterResponses[keyof SearchByPerimeterResponses];
+
+export type SearchByPerimeterCountData = {
+  body: EventPerimeterSearch;
+  path?: never;
+  query?: never;
+  url: '/v1/event/perimeter-search/count';
+};
+
+export type SearchByPerimeterCountErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type SearchByPerimeterCountError =
+  SearchByPerimeterCountErrors[keyof SearchByPerimeterCountErrors];
+
+export type SearchByPerimeterCountResponses = {
+  /**
+   * Response Search By Perimeter Count V1 Event Perimeter Search Count Post
+   * Successful Response
+   */
+  200: number;
+};
+
+export type SearchByPerimeterCountResponse =
+  SearchByPerimeterCountResponses[keyof SearchByPerimeterCountResponses];
+
+export type SearchByAddressData = {
+  body: EventAddressSearch;
+  headers?: {
+    /**
+     * User-Agent
+     */
+    'user-agent'?: string | null;
+  };
+  path?: never;
+  query: {
+    address_language: AvailableLanguages;
+  };
+  url: '/v1/event/address-search';
+};
+
+export type SearchByAddressErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type SearchByAddressError =
+  SearchByAddressErrors[keyof SearchByAddressErrors];
+
+export type SearchByAddressResponses = {
+  /**
+   * Response Search By Address V1 Event Address Search Post
+   * Successful Response
+   */
+  200: Array<EventInDb>;
+};
+
+export type SearchByAddressResponse =
+  SearchByAddressResponses[keyof SearchByAddressResponses];
+
+export type SearchByAddressCountData = {
+  body: EventAddressSearch;
+  path?: never;
+  query: {
+    address_language: AvailableLanguages;
+  };
+  url: '/v1/event/address-search/count';
+};
+
+export type SearchByAddressCountErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type SearchByAddressCountError =
+  SearchByAddressCountErrors[keyof SearchByAddressCountErrors];
+
+export type SearchByAddressCountResponses = {
+  /**
+   * Response Search By Address Count V1 Event Address Search Count Post
+   * Successful Response
+   */
+  200: number;
+};
+
+export type SearchByAddressCountResponse =
+  SearchByAddressCountResponses[keyof SearchByAddressCountResponses];
+
+export type GetMultipleEventByIdData = {
+  /**
+   * Event Ids
+   */
+  body: Array<number>;
+  path?: never;
+  query?: never;
+  url: '/v1/event/multi';
+};
+
+export type GetMultipleEventByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetMultipleEventByIdError =
+  GetMultipleEventByIdErrors[keyof GetMultipleEventByIdErrors];
+
+export type GetMultipleEventByIdResponses = {
+  /**
+   * Response Get Multiple Event By Id V1 Event Multi Post
+   * Successful Response
+   */
+  200: Array<EventInDb>;
+};
+
+export type GetMultipleEventByIdResponse =
+  GetMultipleEventByIdResponses[keyof GetMultipleEventByIdResponses];
+
+export type DeleteEventData = {
+  body?: never;
+  path: {
+    /**
+     * Event Id
+     */
+    event_id: number;
+  };
+  query?: never;
+  url: '/v1/event/{event_id}';
+};
+
+export type DeleteEventErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type DeleteEventError = DeleteEventErrors[keyof DeleteEventErrors];
+
+export type DeleteEventResponses = {
+  /**
+   * Response Delete Event V1 Event  Event Id  Delete
+   * Successful Response
+   */
+  200: string;
+};
+
+export type DeleteEventResponse =
+  DeleteEventResponses[keyof DeleteEventResponses];
+
+export type GetEventByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Event Id
+     */
+    event_id: number;
+  };
+  query?: never;
+  url: '/v1/event/{event_id}';
+};
+
+export type GetEventByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetEventByIdError = GetEventByIdErrors[keyof GetEventByIdErrors];
+
+export type GetEventByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: EventInDb;
+};
+
+export type GetEventByIdResponse =
+  GetEventByIdResponses[keyof GetEventByIdResponses];
+
+export type UpdateEventData = {
+  body: EventUpdate;
+  path: {
+    /**
+     * Event Id
+     */
+    event_id: number;
+  };
+  query?: never;
+  url: '/v1/event/{event_id}';
+};
+
+export type UpdateEventErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateEventError = UpdateEventErrors[keyof UpdateEventErrors];
+
+export type UpdateEventResponses = {
+  /**
+   * Successful Response
+   */
+  200: EventInDb;
+};
+
+export type UpdateEventResponse =
+  UpdateEventResponses[keyof UpdateEventResponses];
+
+export type GetEventOrganizerData = {
+  body?: never;
+  path: {
+    /**
+     * Event Id
+     */
+    event_id: number;
+  };
+  query?: never;
+  url: '/v1/event/{event_id}/organizer';
+};
+
+export type GetEventOrganizerErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetEventOrganizerError =
+  GetEventOrganizerErrors[keyof GetEventOrganizerErrors];
+
+export type GetEventOrganizerResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceInDb;
+};
+
+export type GetEventOrganizerResponse =
+  GetEventOrganizerResponses[keyof GetEventOrganizerResponses];
+
+export type FetchNotificationsData = {
+  body: NotificationFetchQuery;
+  headers?: {
+    /**
+     * User-Agent
+     */
+    'user-agent'?: string | null;
+  };
+  path?: never;
+  query?: {
+    address_language?: AvailableLanguages;
+  };
+  url: '/v1/event/fetch-notifications';
+};
+
+export type FetchNotificationsErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type FetchNotificationsError =
+  FetchNotificationsErrors[keyof FetchNotificationsErrors];
+
+export type FetchNotificationsResponses = {
+  /**
+   * Successful Response
+   */
+  200: NotificationFetchResponse;
+};
+
+export type FetchNotificationsResponse =
+  FetchNotificationsResponses[keyof FetchNotificationsResponses];
+
+export type AllEventTypesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/event_type/';
+};
+
+export type AllEventTypesResponses = {
+  /**
+   * Response All Event Types V1 Event Type  Get
+   * Successful Response
+   */
+  200: Array<EventTypeInDb>;
+};
+
+export type AllEventTypesResponse =
+  AllEventTypesResponses[keyof AllEventTypesResponses];
+
+export type NewEventTypeData = {
+  body: EventTypeCreate;
+  path?: never;
+  query?: never;
+  url: '/v1/event_type/new';
+};
+
+export type NewEventTypeErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type NewEventTypeError = NewEventTypeErrors[keyof NewEventTypeErrors];
+
+export type NewEventTypeResponses = {
+  /**
+   * Successful Response
+   */
+  200: EventTypeInDb;
+};
+
+export type NewEventTypeResponse =
+  NewEventTypeResponses[keyof NewEventTypeResponses];
+
+export type GetEventTypeByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Event Type Id
+     */
+    event_type_id: number;
+  };
+  query?: never;
+  url: '/v1/event_type/{event_type_id}';
+};
+
+export type GetEventTypeByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetEventTypeByIdError =
+  GetEventTypeByIdErrors[keyof GetEventTypeByIdErrors];
+
+export type GetEventTypeByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: EventTypeInDb;
+};
+
+export type GetEventTypeByIdResponse =
+  GetEventTypeByIdResponses[keyof GetEventTypeByIdResponses];
+
+export type UpdateEventTypeData = {
+  body: EventTypeUpdate;
+  path: {
+    /**
+     * Event Type Id
+     */
+    event_type_id: number;
+  };
+  query?: never;
+  url: '/v1/event_type/{event_type_id}';
+};
+
+export type UpdateEventTypeErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateEventTypeError =
+  UpdateEventTypeErrors[keyof UpdateEventTypeErrors];
+
+export type UpdateEventTypeResponses = {
+  /**
+   * Successful Response
+   */
+  200: EventTypeInDb;
+};
+
+export type UpdateEventTypeResponse =
+  UpdateEventTypeResponses[keyof UpdateEventTypeResponses];
+
+export type DeleteEventTypeByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Type Id
+     */
+    type_id: number;
+  };
+  query?: never;
+  url: '/v1/event_type/{type_id}';
+};
+
+export type DeleteEventTypeByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type DeleteEventTypeByIdError =
+  DeleteEventTypeByIdErrors[keyof DeleteEventTypeByIdErrors];
+
+export type DeleteEventTypeByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: EventTypeInDb;
+};
+
+export type DeleteEventTypeByIdResponse =
+  DeleteEventTypeByIdResponses[keyof DeleteEventTypeByIdResponses];
+
+export type GetCreateCountriesData = {
+  body?: never;
+  path?: never;
+  query?: {
+    language?: AvailableLanguages;
+  };
+  url: '/v1/location/available-countries/create';
+};
+
+export type GetCreateCountriesErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetCreateCountriesError =
+  GetCreateCountriesErrors[keyof GetCreateCountriesErrors];
+
+export type GetCreateCountriesResponses = {
+  /**
+   * Response Get Create Countries V1 Location Available Countries Create Get
+   * Successful Response
+   */
+  200: Array<CountryInDb>;
+};
+
+export type GetCreateCountriesResponse =
+  GetCreateCountriesResponses[keyof GetCreateCountriesResponses];
+
+export type GetSearchCountriesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/location/available-countries/search';
+};
+
+export type GetSearchCountriesResponses = {
+  /**
+   * Response Get Search Countries V1 Location Available Countries Search Get
+   * Successful Response
+   */
+  200: Array<CountryInDb>;
+};
+
+export type GetSearchCountriesResponse =
+  GetSearchCountriesResponses[keyof GetSearchCountriesResponses];
+
+export type NewSourceData = {
+  body: SourceCreate;
+  path?: never;
+  query?: never;
+  url: '/v1/source/new';
+};
+
+export type NewSourceErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type NewSourceError = NewSourceErrors[keyof NewSourceErrors];
+
+export type NewSourceResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceInDb;
+};
+
+export type NewSourceResponse = NewSourceResponses[keyof NewSourceResponses];
+
+export type AllSourcesData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
+    approved?: RequestStatus;
+  };
+  url: '/v1/source/';
+};
+
+export type AllSourcesErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type AllSourcesError = AllSourcesErrors[keyof AllSourcesErrors];
+
+export type AllSourcesResponses = {
+  /**
+   * Response All Sources V1 Source  Get
+   * Successful Response
+   */
+  200: Array<number>;
+};
+
+export type AllSourcesResponse = AllSourcesResponses[keyof AllSourcesResponses];
+
+export type SearchSourceData = {
+  body: SourceAddressSearch;
+  headers?: {
+    /**
+     * User-Agent
+     */
+    'user-agent'?: string | null;
+  };
+  path?: never;
+  query: {
+    address_language: AvailableLanguages;
+  };
+  url: '/v1/source/address-search';
+};
+
+export type SearchSourceErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type SearchSourceError = SearchSourceErrors[keyof SearchSourceErrors];
+
+export type SearchSourceResponses = {
+  /**
+   * Response Search Source V1 Source Address Search Post
+   * Successful Response
+   */
+  200: Array<number>;
+};
+
+export type SearchSourceResponse =
+  SearchSourceResponses[keyof SearchSourceResponses];
+
+export type GetSourceByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}';
+};
+
+export type GetSourceByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetSourceByIdError = GetSourceByIdErrors[keyof GetSourceByIdErrors];
+
+export type GetSourceByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceInDb;
+};
+
+export type GetSourceByIdResponse =
+  GetSourceByIdResponses[keyof GetSourceByIdResponses];
+
+export type UpdateSourceData = {
+  body: SourceUpdateUser;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}';
+};
+
+export type UpdateSourceErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateSourceError = UpdateSourceErrors[keyof UpdateSourceErrors];
+
+export type UpdateSourceResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceInDb;
+};
+
+export type UpdateSourceResponse =
+  UpdateSourceResponses[keyof UpdateSourceResponses];
+
+export type GetSourceAdminsByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}/admins';
+};
+
+export type GetSourceAdminsByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetSourceAdminsByIdError =
+  GetSourceAdminsByIdErrors[keyof GetSourceAdminsByIdErrors];
+
+export type GetSourceAdminsByIdResponses = {
+  /**
+   * Response Get Source Admins By Id V1 Source  Source Id  Admins Get
+   * Successful Response
+   */
+  200: Array<UserInDb>;
+};
+
+export type GetSourceAdminsByIdResponse =
+  GetSourceAdminsByIdResponses[keyof GetSourceAdminsByIdResponses];
+
+export type GetSourceContactByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}/internal_contact';
+};
+
+export type GetSourceContactByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetSourceContactByIdError =
+  GetSourceContactByIdErrors[keyof GetSourceContactByIdErrors];
+
+export type GetSourceContactByIdResponses = {
+  /**
+   * Response Get Source Contact By Id V1 Source  Source Id  Internal Contact Get
+   * Successful Response
+   */
+  200: string;
+};
+
+export type GetSourceContactByIdResponse =
+  GetSourceContactByIdResponses[keyof GetSourceContactByIdResponses];
+
+export type UpdateSourceAdminData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query: {
+    approval_status: RequestStatus;
+  };
+  url: '/v1/source/{source_id}/approval_status';
+};
+
+export type UpdateSourceAdminErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateSourceAdminError =
+  UpdateSourceAdminErrors[keyof UpdateSourceAdminErrors];
+
+export type UpdateSourceAdminResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceInDb;
+};
+
+export type UpdateSourceAdminResponse =
+  UpdateSourceAdminResponses[keyof UpdateSourceAdminResponses];
+
+export type AddSourceAdminData = {
+  body: UserMail;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}/add_admin';
+};
+
+export type AddSourceAdminErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type AddSourceAdminError =
+  AddSourceAdminErrors[keyof AddSourceAdminErrors];
+
+export type AddSourceAdminResponses = {
+  /**
+   * Response Add Source Admin V1 Source  Source Id  Add Admin Put
+   * Successful Response
+   */
+  200: Array<UserInDb>;
+};
+
+export type AddSourceAdminResponse =
+  AddSourceAdminResponses[keyof AddSourceAdminResponses];
+
+export type RemoveSourceAdminData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+    /**
+     * Admin User Id
+     */
+    admin_user_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}/remove_admin/{admin_user_id}';
+};
+
+export type RemoveSourceAdminErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type RemoveSourceAdminError =
+  RemoveSourceAdminErrors[keyof RemoveSourceAdminErrors];
+
+export type RemoveSourceAdminResponses = {
+  /**
+   * Response Remove Source Admin V1 Source  Source Id  Remove Admin  Admin User Id  Put
+   * Successful Response
+   */
+  200: Array<UserInDb>;
+};
+
+export type RemoveSourceAdminResponse =
+  RemoveSourceAdminResponses[keyof RemoveSourceAdminResponses];
+
+export type FutureEventsData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
+  };
+  url: '/v1/source/{source_id}/future_events';
+};
+
+export type FutureEventsErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type FutureEventsError = FutureEventsErrors[keyof FutureEventsErrors];
+
+export type FutureEventsResponses = {
+  /**
+   * Response Future Events V1 Source  Source Id  Future Events Get
+   * Successful Response
+   */
+  200: Array<number>;
+};
+
+export type FutureEventsResponse =
+  FutureEventsResponses[keyof FutureEventsResponses];
+
+export type PastEventsData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
+  };
+  url: '/v1/source/{source_id}/past_events';
+};
+
+export type PastEventsErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type PastEventsError = PastEventsErrors[keyof PastEventsErrors];
+
+export type PastEventsResponses = {
+  /**
+   * Response Past Events V1 Source  Source Id  Past Events Get
+   * Successful Response
+   */
+  200: Array<number>;
+};
+
+export type PastEventsResponse = PastEventsResponses[keyof PastEventsResponses];
+
+export type EditableEventsData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
+  };
+  url: '/v1/source/{source_id}/editable_events';
+};
+
+export type EditableEventsErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type EditableEventsError =
+  EditableEventsErrors[keyof EditableEventsErrors];
+
+export type EditableEventsResponses = {
+  /**
+   * Response Editable Events V1 Source  Source Id  Editable Events Get
+   * Successful Response
+   */
+  200: Array<number>;
+};
+
+export type EditableEventsResponse =
+  EditableEventsResponses[keyof EditableEventsResponses];
+
+export type GetSourceTitleImageData = {
+  body?: never;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}/title-image';
+};
+
+export type GetSourceTitleImageErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetSourceTitleImageError =
+  GetSourceTitleImageErrors[keyof GetSourceTitleImageErrors];
+
+export type GetSourceTitleImageResponses = {
+  /**
+   * Successful Response
+   */
+  200: unknown;
+};
+
+export type UpsertTitleImageData = {
+  body: BodyUpsertTitleImageV1SourceSourceIdTitleImagePost;
+  path: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+  };
+  query?: never;
+  url: '/v1/source/{source_id}/title-image';
+};
+
+export type UpsertTitleImageErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpsertTitleImageError =
+  UpsertTitleImageErrors[keyof UpsertTitleImageErrors];
+
+export type UpsertTitleImageResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceInDb;
+};
+
+export type UpsertTitleImageResponse =
+  UpsertTitleImageResponses[keyof UpsertTitleImageResponses];
+
+export type AllSourceTypesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/source_type/';
+};
+
+export type AllSourceTypesResponses = {
+  /**
+   * Response All Source Types V1 Source Type  Get
+   * Successful Response
+   */
+  200: Array<SourceTypeInDb>;
+};
+
+export type AllSourceTypesResponse =
+  AllSourceTypesResponses[keyof AllSourceTypesResponses];
+
+export type NewSourceTypeData = {
+  body: SourceTypeCreate;
+  path?: never;
+  query?: never;
+  url: '/v1/source_type/new';
+};
+
+export type NewSourceTypeErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type NewSourceTypeError = NewSourceTypeErrors[keyof NewSourceTypeErrors];
+
+export type NewSourceTypeResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceTypeInDb;
+};
+
+export type NewSourceTypeResponse =
+  NewSourceTypeResponses[keyof NewSourceTypeResponses];
+
+export type GetSourceTypeByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Source Type Id
+     */
+    source_type_id: number;
+  };
+  query?: never;
+  url: '/v1/source_type/{source_type_id}';
+};
+
+export type GetSourceTypeByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetSourceTypeByIdError =
+  GetSourceTypeByIdErrors[keyof GetSourceTypeByIdErrors];
+
+export type GetSourceTypeByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceTypeInDb;
+};
+
+export type GetSourceTypeByIdResponse =
+  GetSourceTypeByIdResponses[keyof GetSourceTypeByIdResponses];
+
+export type UpdateSourceTypeData = {
+  body: SourceTypeUpdate;
+  path: {
+    /**
+     * Source Type Id
+     */
+    source_type_id: number;
+  };
+  query?: never;
+  url: '/v1/source_type/{source_type_id}';
+};
+
+export type UpdateSourceTypeErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateSourceTypeError =
+  UpdateSourceTypeErrors[keyof UpdateSourceTypeErrors];
+
+export type UpdateSourceTypeResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceTypeInDb;
+};
+
+export type UpdateSourceTypeResponse =
+  UpdateSourceTypeResponses[keyof UpdateSourceTypeResponses];
+
+export type DeleteSourceTypeByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Type Id
+     */
+    type_id: number;
+  };
+  query?: never;
+  url: '/v1/source_type/{type_id}';
+};
+
+export type DeleteSourceTypeByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type DeleteSourceTypeByIdError =
+  DeleteSourceTypeByIdErrors[keyof DeleteSourceTypeByIdErrors];
+
+export type DeleteSourceTypeByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: SourceTypeInDb;
+};
+
+export type DeleteSourceTypeByIdResponse =
+  DeleteSourceTypeByIdResponses[keyof DeleteSourceTypeByIdResponses];
+
+export type AllTopicsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/topic/';
+};
+
+export type AllTopicsResponses = {
+  /**
+   * Response All Topics V1 Topic  Get
+   * Successful Response
+   */
+  200: Array<TopicInDb>;
+};
+
+export type AllTopicsResponse = AllTopicsResponses[keyof AllTopicsResponses];
+
+export type NewTopicData = {
+  body: TopicCreate;
+  path?: never;
+  query?: never;
+  url: '/v1/topic/new';
+};
+
+export type NewTopicErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type NewTopicError = NewTopicErrors[keyof NewTopicErrors];
+
+export type NewTopicResponses = {
+  /**
+   * Successful Response
+   */
+  200: TopicInDb;
+};
+
+export type NewTopicResponse = NewTopicResponses[keyof NewTopicResponses];
+
+export type UpdateTopicData = {
+  body: TopicUpdate;
+  path: {
+    /**
+     * Event Topic Id
+     */
+    event_topic_id: number;
+  };
+  query?: never;
+  url: '/v1/topic/{event_topic_id}';
+};
+
+export type UpdateTopicErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateTopicError = UpdateTopicErrors[keyof UpdateTopicErrors];
+
+export type UpdateTopicResponses = {
+  /**
+   * Successful Response
+   */
+  200: TopicInDb;
+};
+
+export type UpdateTopicResponse =
+  UpdateTopicResponses[keyof UpdateTopicResponses];
+
+export type DeleteTopicByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Topic Id
+     */
+    topic_id: number;
+  };
+  query?: never;
+  url: '/v1/topic/{topic_id}';
+};
+
+export type DeleteTopicByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type DeleteTopicByIdError =
+  DeleteTopicByIdErrors[keyof DeleteTopicByIdErrors];
+
+export type DeleteTopicByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: TopicInDb;
+};
+
+export type DeleteTopicByIdResponse =
+  DeleteTopicByIdResponses[keyof DeleteTopicByIdResponses];
+
+export type GetTopicByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Topic Id
+     */
+    topic_id: number;
+  };
+  query?: never;
+  url: '/v1/topic/{topic_id}';
+};
+
+export type GetTopicByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetTopicByIdError = GetTopicByIdErrors[keyof GetTopicByIdErrors];
+
+export type GetTopicByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: TopicInDb;
+};
+
+export type GetTopicByIdResponse =
+  GetTopicByIdResponses[keyof GetTopicByIdResponses];
+
+export type AllInformationData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/information/';
+};
+
+export type AllInformationResponses = {
+  /**
+   * Response All Information V1 Information  Post
+   * Successful Response
+   */
+  200: Array<InformationInDb>;
+};
+
+export type AllInformationResponse =
+  AllInformationResponses[keyof AllInformationResponses];
+
+export type NewInformationData = {
+  body: InformationCreate;
+  path?: never;
+  query: {
+    address_language: AvailableLanguages;
+  };
+  url: '/v1/information/new';
+};
+
+export type NewInformationErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type NewInformationError =
+  NewInformationErrors[keyof NewInformationErrors];
+
+export type NewInformationResponses = {
+  /**
+   * Successful Response
+   */
+  200: InformationInDb;
+};
+
+export type NewInformationResponse =
+  NewInformationResponses[keyof NewInformationResponses];
+
+export type GetAvailableCitiesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/information/available-cities';
+};
+
+export type GetAvailableCitiesResponses = {
+  /**
+   * Response Get Available Cities V1 Information Available Cities Get
+   * Successful Response
+   */
+  200: Array<string>;
+};
+
+export type GetAvailableCitiesResponse =
+  GetAvailableCitiesResponses[keyof GetAvailableCitiesResponses];
+
+export type FindInformationData = {
+  body: InformationQuery;
+  path?: never;
+  query: {
+    address_language: AvailableLanguages;
+  };
+  url: '/v1/information/find';
+};
+
+export type FindInformationErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type FindInformationError =
+  FindInformationErrors[keyof FindInformationErrors];
+
+export type FindInformationResponses = {
+  /**
+   * Response Find Information V1 Information Find Post
+   * Successful Response
+   */
+  200: Array<InformationInDb>;
+};
+
+export type FindInformationResponse =
+  FindInformationResponses[keyof FindInformationResponses];
+
+export type DeleteInformationData = {
+  body?: never;
+  path: {
+    /**
+     * Information Id
+     */
+    information_id: number;
+  };
+  query?: never;
+  url: '/v1/information/{information_id}';
+};
+
+export type DeleteInformationErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type DeleteInformationError =
+  DeleteInformationErrors[keyof DeleteInformationErrors];
+
+export type DeleteInformationResponses = {
+  /**
+   * Successful Response
+   */
+  200: InformationInDb;
+};
+
+export type DeleteInformationResponse =
+  DeleteInformationResponses[keyof DeleteInformationResponses];
+
+export type UpdateInformationData = {
+  body: InformationUpdate;
+  path: {
+    /**
+     * Information Id
+     */
+    information_id: number;
+  };
+  query?: never;
+  url: '/v1/information/{information_id}';
+};
+
+export type UpdateInformationErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateInformationError =
+  UpdateInformationErrors[keyof UpdateInformationErrors];
+
+export type UpdateInformationResponses = {
+  /**
+   * Successful Response
+   */
+  200: InformationInDb;
+};
+
+export type UpdateInformationResponse =
+  UpdateInformationResponses[keyof UpdateInformationResponses];
+
+export type GetAccessTokenByLoginData = {
+  body: BodyGetAccessTokenByLoginV1UserGetTokenPost;
+  path?: never;
+  query?: never;
+  url: '/v1/user/get_token';
+};
+
+export type GetAccessTokenByLoginErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetAccessTokenByLoginError =
+  GetAccessTokenByLoginErrors[keyof GetAccessTokenByLoginErrors];
+
+export type GetAccessTokenByLoginResponses = {
+  /**
+   * Successful Response
+   */
+  200: Token;
+};
+
+export type GetAccessTokenByLoginResponse =
+  GetAccessTokenByLoginResponses[keyof GetAccessTokenByLoginResponses];
+
+export type GetAccessTokenByTokenData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/user/refresh_token';
+};
+
+export type GetAccessTokenByTokenResponses = {
+  /**
+   * Successful Response
+   */
+  200: Token;
+};
+
+export type GetAccessTokenByTokenResponse =
+  GetAccessTokenByTokenResponses[keyof GetAccessTokenByTokenResponses];
+
+export type ResetPasswordData = {
+  body: UserMail;
+  path?: never;
+  query?: never;
+  url: '/v1/user/reset-password';
+};
+
+export type ResetPasswordErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type ResetPasswordError = ResetPasswordErrors[keyof ResetPasswordErrors];
+
+export type ResetPasswordResponses = {
+  /**
+   * Response Reset Password V1 User Reset Password Post
+   * Successful Response
+   */
+  200: null;
+};
+
+export type ResetPasswordResponse =
+  ResetPasswordResponses[keyof ResetPasswordResponses];
+
+export type DeleteOwnUserData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/user/me';
+};
+
+export type DeleteOwnUserResponses = {
+  /**
+   * Successful Response
+   */
+  200: UserInDb;
+};
+
+export type DeleteOwnUserResponse =
+  DeleteOwnUserResponses[keyof DeleteOwnUserResponses];
+
+export type GetOwnUserData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/user/me';
+};
+
+export type GetOwnUserResponses = {
+  /**
+   * Successful Response
+   */
+  200: UserInDb;
+};
+
+export type GetOwnUserResponse = GetOwnUserResponses[keyof GetOwnUserResponses];
+
+export type UpdateOwnUserData = {
+  body: UserUpdate;
+  path?: never;
+  query?: never;
+  url: '/v1/user/me';
+};
+
+export type UpdateOwnUserErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateOwnUserError = UpdateOwnUserErrors[keyof UpdateOwnUserErrors];
+
+export type UpdateOwnUserResponses = {
+  /**
+   * Successful Response
+   */
+  200: UserInDb;
+};
+
+export type UpdateOwnUserResponse =
+  UpdateOwnUserResponses[keyof UpdateOwnUserResponses];
+
+export type GetOwnSourcesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/user/me/sources';
+};
+
+export type GetOwnSourcesResponses = {
+  /**
+   * Response Get Own Sources V1 User Me Sources Get
+   * Successful Response
+   */
+  200: Array<SourceInDb>;
+};
+
+export type GetOwnSourcesResponse =
+  GetOwnSourcesResponses[keyof GetOwnSourcesResponses];
+
+export type GetAdminIdsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/user/admins';
+};
+
+export type GetAdminIdsResponses = {
+  /**
+   * Response Get Admin Ids V1 User Admins Get
+   * Successful Response
+   */
+  200: Array<number>;
+};
+
+export type GetAdminIdsResponse =
+  GetAdminIdsResponses[keyof GetAdminIdsResponses];
+
+export type MakeAdminData = {
+  body: UserMail;
+  path?: never;
+  query?: never;
+  url: '/v1/user/make_admin';
+};
+
+export type MakeAdminErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type MakeAdminError = MakeAdminErrors[keyof MakeAdminErrors];
+
+export type MakeAdminResponses = {
+  /**
+   * Successful Response
+   */
+  200: UserInDb;
+};
+
+export type MakeAdminResponse = MakeAdminResponses[keyof MakeAdminResponses];
+
+export type GetUserByIdData = {
+  body?: never;
+  path: {
+    /**
+     * User Id
+     */
+    user_id: number;
+  };
+  query?: never;
+  url: '/v1/user/{user_id}';
+};
+
+export type GetUserByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetUserByIdError = GetUserByIdErrors[keyof GetUserByIdErrors];
+
+export type GetUserByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: UserInDb;
+};
+
+export type GetUserByIdResponse =
+  GetUserByIdResponses[keyof GetUserByIdResponses];
+
+export type UpdateUserByIdData = {
+  body: UserSuperUserUpdate;
+  path: {
+    /**
+     * User Id
+     */
+    user_id: number;
+  };
+  query?: never;
+  url: '/v1/user/{user_id}';
+};
+
+export type UpdateUserByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateUserByIdError =
+  UpdateUserByIdErrors[keyof UpdateUserByIdErrors];
+
+export type UpdateUserByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: UserInDb;
+};
+
+export type UpdateUserByIdResponse =
+  UpdateUserByIdResponses[keyof UpdateUserByIdResponses];
+
+export type GetSearchLanguagesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/language/available';
+};
+
+export type GetSearchLanguagesResponses = {
+  /**
+   * Response Get Search Languages V1 Language Available Get
+   * Successful Response
+   */
+  200: Array<string>;
+};
+
+export type GetSearchLanguagesResponse =
+  GetSearchLanguagesResponses[keyof GetSearchLanguagesResponses];
+
+export type GetAvailableDocumentsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/document/available';
+};
+
+export type GetAvailableDocumentsResponses = {
+  /**
+   * Response Get Available Documents V1 Document Available Get
+   * Successful Response
+   */
+  200: Array<InternalDocumentInDb>;
+};
+
+export type GetAvailableDocumentsResponse =
+  GetAvailableDocumentsResponses[keyof GetAvailableDocumentsResponses];
+
+export type DeleteDocumentByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Document Id
+     */
+    document_id: number;
+  };
+  query?: never;
+  url: '/v1/document/{document_id}';
+};
+
+export type DeleteDocumentByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type DeleteDocumentByIdError =
+  DeleteDocumentByIdErrors[keyof DeleteDocumentByIdErrors];
+
+export type DeleteDocumentByIdResponses = {
+  /**
+   * Response Delete Document By Id V1 Document  Document Id  Delete
+   * Successful Response
+   */
+  200: string;
+};
+
+export type DeleteDocumentByIdResponse =
+  DeleteDocumentByIdResponses[keyof DeleteDocumentByIdResponses];
+
+export type GetDocumentByIdData = {
+  body?: never;
+  path: {
+    /**
+     * Document Id
+     */
+    document_id: number;
+  };
+  query?: never;
+  url: '/v1/document/{document_id}';
+};
+
+export type GetDocumentByIdErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetDocumentByIdError =
+  GetDocumentByIdErrors[keyof GetDocumentByIdErrors];
+
+export type GetDocumentByIdResponses = {
+  /**
+   * Successful Response
+   */
+  200: unknown;
+};
+
+export type UploadDocumentData = {
+  body: BodyUploadDocumentV1DocumentUploadPost;
+  path?: never;
+  query: {
+    language: AvailableLanguages;
+    document_type: InternalDocumentType;
+    /**
+     * Display Name
+     */
+    display_name: string;
+  };
+  url: '/v1/document/upload';
+};
+
+export type UploadDocumentErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UploadDocumentError =
+  UploadDocumentErrors[keyof UploadDocumentErrors];
+
+export type UploadDocumentResponses = {
+  /**
+   * Response Upload Document V1 Document Upload Post
+   * Successful Response
+   */
+  200: string;
+};
+
+export type UploadDocumentResponse =
+  UploadDocumentResponses[keyof UploadDocumentResponses];
+
+export type GetEventAnalysisData = {
+  /**
+   * Queries
+   */
+  body: Array<AnalysisEventQuery>;
+  path?: never;
+  query?: never;
+  url: '/v1/analysis/event';
+};
+
+export type GetEventAnalysisErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetEventAnalysisError =
+  GetEventAnalysisErrors[keyof GetEventAnalysisErrors];
+
+export type GetEventAnalysisResponses = {
+  /**
+   * Response Get Event Analysis V1 Analysis Event Post
+   * Successful Response
+   */
+  200: Array<AnalysisEventResult>;
+};
+
+export type GetEventAnalysisResponse =
+  GetEventAnalysisResponses[keyof GetEventAnalysisResponses];
+
+export type ReadApplicationSettingsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/admin/settings/application';
+};
+
+export type ReadApplicationSettingsResponses = {
+  /**
+   * Successful Response
+   */
+  200: ApplicationSettingsInDb;
+};
+
+export type ReadApplicationSettingsResponse =
+  ReadApplicationSettingsResponses[keyof ReadApplicationSettingsResponses];
+
+export type UpdateApplicationSettingsData = {
+  body: ApplicationSettingsInDb;
+  path?: never;
+  query?: never;
+  url: '/v1/admin/settings/application';
+};
+
+export type UpdateApplicationSettingsErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UpdateApplicationSettingsError =
+  UpdateApplicationSettingsErrors[keyof UpdateApplicationSettingsErrors];
+
+export type UpdateApplicationSettingsResponses = {
+  /**
+   * Successful Response
+   */
+  200: ApplicationSettingsInDb;
+};
+
+export type UpdateApplicationSettingsResponse =
+  UpdateApplicationSettingsResponses[keyof UpdateApplicationSettingsResponses];
+
+export type GetAdminStatisticsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/admin/statistics';
+};
+
+export type GetAdminStatisticsResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminStatistics;
+};
+
+export type GetAdminStatisticsResponse =
+  GetAdminStatisticsResponses[keyof GetAdminStatisticsResponses];
+
+export type RunCleanupData = {
+  body: CleanupTasks;
+  path?: never;
+  query?: never;
+  url: '/v1/admin/cleanup';
+};
+
+export type RunCleanupErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type RunCleanupError = RunCleanupErrors[keyof RunCleanupErrors];
+
+export type RunCleanupResponses = {
+  /**
+   * Successful Response
+   */
+  200: Message;
+};
+
+export type RunCleanupResponse = RunCleanupResponses[keyof RunCleanupResponses];
+
+export type TrainData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/admin/train';
+};
+
+export type TrainResponses = {
+  /**
+   * Successful Response
+   */
+  200: Message;
+};
+
+export type TrainResponse = TrainResponses[keyof TrainResponses];
+
+export type GetQuickTagEventData = {
+  body: QuickTagRequest;
+  path?: never;
+  query?: never;
+  url: '/v1/admin/quick-tag/get';
+};
+
+export type GetQuickTagEventErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetQuickTagEventError =
+  GetQuickTagEventErrors[keyof GetQuickTagEventErrors];
+
+export type GetQuickTagEventResponses = {
+  /**
+   * Response Get Quick Tag Event V1 Admin Quick Tag Get Post
+   * Successful Response
+   */
+  200: QuickTagPrediction | null;
+};
+
+export type GetQuickTagEventResponse =
+  GetQuickTagEventResponses[keyof GetQuickTagEventResponses];
+
+export type QuickTagEventData = {
+  /**
+   * Topic Ids
+   */
+  body: Array<number>;
+  path?: never;
+  query: {
+    /**
+     * Event Id
+     */
+    event_id: number;
+  };
+  url: '/v1/admin/quick-tag/set';
+};
+
+export type QuickTagEventErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type QuickTagEventError = QuickTagEventErrors[keyof QuickTagEventErrors];
+
+export type QuickTagEventResponses = {
+  /**
+   * Response Quick Tag Event V1 Admin Quick Tag Set Post
+   * Successful Response
+   */
+  200: number;
+};
+
+export type QuickTagEventResponse =
+  QuickTagEventResponses[keyof QuickTagEventResponses];
+
+export type UploadExcelData = {
+  body: BodyUploadExcelV1AdminUploadExcelPost;
+  path?: never;
+  query: {
+    /**
+     * Source Id
+     */
+    source_id: number;
+    /**
+     * Country Value
+     */
+    country_value?: string | null;
+    /**
+     * Country Column
+     */
+    country_column?: string | null;
+    /**
+     * City Value
+     */
+    city_value?: string | null;
+    /**
+     * City Column
+     */
+    city_column?: string | null;
+    /**
+     * Street Value
+     */
+    street_value?: string | null;
+    /**
+     * Street Column
+     */
+    street_column?: string | null;
+    /**
+     * Zip Code Value
+     */
+    zip_code_value?: string | null;
+    /**
+     * Zip Code Column
+     */
+    zip_code_column?: string | null;
+    /**
+     * Address Language Value
+     */
+    address_language_value?: AvailableLanguages | null;
+    /**
+     * Address Language Column
+     */
+    address_language_column?: string | null;
+    /**
+     * Name Value
+     */
+    name_value?: string | null;
+    /**
+     * Name Column
+     */
+    name_column?: string | null;
+    /**
+     * Short Description Value
+     */
+    short_description_value?: string | null;
+    /**
+     * Short Description Column
+     */
+    short_description_column?: string | null;
+    /**
+     * Description Value
+     */
+    description_value?: string | null;
+    /**
+     * Description Column
+     */
+    description_column?: string | null;
+    /**
+     * Url Value
+     */
+    url_value?: string | null;
+    /**
+     * Url Column
+     */
+    url_column?: string | null;
+    /**
+     * Start Time Value
+     */
+    start_time_value?: string | null;
+    /**
+     * Start Time Column
+     */
+    start_time_column?: string | null;
+    /**
+     * End Time Value
+     */
+    end_time_value?: string | null;
+    /**
+     * End Time Column
+     */
+    end_time_column?: string | null;
+    /**
+     * Raw Location Value
+     */
+    raw_location_value?: string | null;
+    /**
+     * Raw Location Column
+     */
+    raw_location_column?: string | null;
+    /**
+     * Raw Estimated Participants Value
+     */
+    raw_estimated_participants_value?: string | null;
+    /**
+     * Raw Estimated Participants Column
+     */
+    raw_estimated_participants_column?: string | null;
+    /**
+     * Raw Organiser Value
+     */
+    raw_organiser_value?: string | null;
+    /**
+     * Raw Organiser Column
+     */
+    raw_organiser_column?: string | null;
+    /**
+     * Type Id
+     */
+    type_id: number;
+    /**
+     * Time Parsing Format
+     */
+    time_parsing_format?: string | null;
+    /**
+     * Time Zone
+     */
+    time_zone?: string;
+  };
+  url: '/v1/admin/upload-excel';
+};
+
+export type UploadExcelErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type UploadExcelError = UploadExcelErrors[keyof UploadExcelErrors];
+
+export type UploadExcelResponses = {
+  /**
+   * Response Upload Excel V1 Admin Upload Excel Post
+   * Successful Response
+   */
+  200: Array<number>;
+};
+
+export type UploadExcelResponse =
+  UploadExcelResponses[keyof UploadExcelResponses];
+
+export type DumpEventsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/admin/event-dump';
+};
+
+export type DumpEventsResponses = {
+  /**
+   * Successful Response
+   */
+  200: unknown;
+};
+
+export type GetEventIcsData = {
+  body?: never;
+  path?: never;
+  query: {
+    /**
+     * Event Id
+     */
+    event_id: number;
+  };
+  url: '/v1/export/ics/event.ics';
+};
+
+export type GetEventIcsErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetEventIcsError = GetEventIcsErrors[keyof GetEventIcsErrors];
+
+export type GetEventIcsResponses = {
+  /**
+   * Successful Response
+   */
+  200: unknown;
+};
+
+export type GetEventsIcsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Name
+     */
+    name?: string | null;
+    /**
+     * Country
+     */
+    country?: string;
+    /**
+     * City
+     */
+    city?: string;
+    /**
+     * Zip Code
+     */
+    zip_code?: string;
     /**
      * Type Ids
      */
-    type_ids?: Array<number>;
+    type_ids?: string | null;
     /**
      * Topic Ids
      */
-    topic_ids?: Array<number>;
+    topic_ids?: string | null;
     /**
      * Organiser Ids
      */
-    organiser_ids?: Array<number>;
+    organiser_ids?: string | null;
     /**
      * Latitude
      */
@@ -957,149 +3811,45 @@ export type NotificationFetchQuery = {
      */
     radius_km?: number | null;
     /**
-     * Country
+     * Limit
      */
-    country?: string | null;
+    limit?: number;
     /**
-     * City
+     * Offset
      */
-    city?: string | null;
-    /**
-     * Zip Code
-     */
-    zip_code?: string | null;
+    offset?: number;
+    address_language?: AvailableLanguages;
+  };
+  url: '/v1/export/ics/events.ics';
 };
 
-/**
- * NotificationFetchResponse
- * A schema to request an event for tagging.
- */
-export type NotificationFetchResponse = {
-    /**
-     * Event Ids
-     */
-    event_ids: Array<number>;
-    /**
-     * Next Fetch
-     */
-    next_fetch: string;
+export type GetEventsIcsErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
 };
 
-/**
- * Point
- * Point Model
- */
-export type Point = {
-    /**
-     * Bbox
-     */
-    bbox?: [
-        number,
-        number,
-        number,
-        number
-    ] | [
-        number,
-        number,
-        number,
-        number,
-        number,
-        number
-    ] | null;
-    /**
-     * Type
-     */
-    type: 'Point';
-    /**
-     * Coordinates
-     */
-    coordinates: Position2D | Position3D;
+export type GetEventsIcsError = GetEventsIcsErrors[keyof GetEventsIcsErrors];
+
+export type GetEventsIcsResponses = {
+  /**
+   * Successful Response
+   */
+  200: string;
 };
 
-export type Position2D = [
-    number,
-    number
-];
+export type GetEventsIcsResponse =
+  GetEventsIcsResponses[keyof GetEventsIcsResponses];
 
-export type Position3D = [
-    number,
-    number,
-    number
-];
-
-/**
- * QuickTagEvent
- * API return schema of an Event.
- */
-export type QuickTagEvent = {
+export type GetRssFeedData = {
+  body?: never;
+  path?: never;
+  query: {
     /**
-     * Id
+     * Alert Name
      */
-    id: number;
-    /**
-     * Name
-     */
-    name: string;
-    /**
-     * Description
-     */
-    description?: string | null;
-};
-
-/**
- * QuickTagPrediction
- * A schema to return a prediction of topics.
- */
-export type QuickTagPrediction = {
-    event: QuickTagEvent;
-    /**
-     * Prediction
-     */
-    prediction: {
-        [key: string]: number;
-    };
-    /**
-     * Current Count
-     */
-    current_count: number;
-    /**
-     * Left Count
-     */
-    left_count: number;
-};
-
-/**
- * QuickTagRequest
- * A schema to request an event for tagging.
- */
-export type QuickTagRequest = {
-    /**
-     * Included Topic Ids
-     */
-    included_topic_ids: Array<number>;
-    /**
-     * Mode
-     */
-    mode: 'closest_future' | 'oldest' | 'newest';
-};
-
-/**
- * ReoccurringEventPeriod
- * Supported time periods for reoccurring events.
- */
-export type ReoccurringEventPeriod = 'none' | 'weekly' | 'bi-weekly' | 'monthly';
-
-/**
- * RequestStatus
- * Reflects the status of a request.
- */
-export type RequestStatus = 'pending' | 'approved' | 'denied';
-
-/**
- * SourceAddressSearch
- * API input schema to search an Source by address.
- */
-export type SourceAddressSearch = {
+    alert_name: string;
     /**
      * Name
      */
@@ -1107,23 +3857,39 @@ export type SourceAddressSearch = {
     /**
      * Country
      */
-    country: string;
+    country?: string;
     /**
      * City
      */
-    city: string;
+    city?: string;
     /**
      * Zip Code
      */
-    zip_code: string;
+    zip_code?: string;
     /**
      * Type Ids
      */
-    type_ids?: Array<number>;
+    type_ids?: string | null;
     /**
      * Topic Ids
      */
-    topic_ids?: Array<number>;
+    topic_ids?: string | null;
+    /**
+     * Organiser Ids
+     */
+    organiser_ids?: string | null;
+    /**
+     * Latitude
+     */
+    latitude?: number | null;
+    /**
+     * Longitude
+     */
+    longitude?: number | null;
+    /**
+     * Radius Km
+     */
+    radius_km?: number | null;
     /**
      * Limit
      */
@@ -1132,2780 +3898,111 @@ export type SourceAddressSearch = {
      * Offset
      */
     offset?: number;
-};
-
-/**
- * SourceCreate
- * API input schema to create an Source.
- */
-export type SourceCreate = {
-    /**
-     * Name
-     */
-    name: string;
-    /**
-     * Description
-     */
-    description: string;
-    /**
-     * Url
-     */
-    url?: string | null;
-    /**
-     * Public Mail Contact
-     */
-    public_mail_contact?: string | null;
-    /**
-     * Internal Point Of Contact
-     */
-    internal_point_of_contact: string;
-    location: LocationCreate;
-    /**
-     * Type Id
-     */
-    type_id: number;
-    /**
-     * Topic Ids
-     */
-    topic_ids: Array<number>;
-};
-
-/**
- * SourceInDB
- * API return schema of an Source.
- */
-export type SourceInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Name
-     */
-    name: string;
-    /**
-     * Slug
-     */
-    slug: string;
-    /**
-     * Description
-     */
-    description?: string | null;
-    /**
-     * Url
-     */
-    url?: string | null;
-    /**
-     * Public Mail Contact
-     */
-    public_mail_contact?: string | null;
-    location: LocationInDb;
-    type: SourceTypeInDb;
-    /**
-     * Topics
-     */
-    topics: Array<TopicInDb>;
-    /**
-     * Created
-     */
-    created: string;
-    approved: RequestStatus;
-};
-
-/**
- * SourceTypeCreate
- * API input schema to create an Source Type.
- */
-export type SourceTypeCreate = {
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
-};
-
-/**
- * SourceTypeInDB
- * API return schema of an Source Type.
- */
-export type SourceTypeInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
-};
-
-/**
- * SourceTypeUpdate
- * API input schema to update an Source Type.
- */
-export type SourceTypeUpdate = {
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
-};
-
-/**
- * SourceUpdateUser
- * API input schema to update an Source as source admin.
- */
-export type SourceUpdateUser = {
-    /**
-     * Name
-     */
-    name?: string | null;
-    /**
-     * Description
-     */
-    description?: string | null;
-    /**
-     * Url
-     */
-    url?: string | null;
-    /**
-     * Public Mail Contact
-     */
-    public_mail_contact?: string | null;
-    /**
-     * Internal Point Of Contact
-     */
-    internal_point_of_contact?: string | null;
-    location?: LocationUpdate | null;
-    /**
-     * Type Id
-     */
-    type_id?: number | null;
-    /**
-     * Topic Ids
-     */
-    topic_ids?: Array<number> | null;
-};
-
-/**
- * Token
- * API output schema for JWTs.
- */
-export type Token = {
-    /**
-     * Access Token
-     */
-    access_token: string;
-    /**
-     * Token Type
-     */
-    token_type: string;
-};
-
-/**
- * TopicCreate
- * API input schema for creating a Topic.
- */
-export type TopicCreate = {
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
-};
-
-/**
- * TopicInDB
- * API output schema for a Topic.
- */
-export type TopicInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
-};
-
-/**
- * TopicUpdate
- * API input schema for updating a Topic.
- */
-export type TopicUpdate = {
-    /**
-     * Name En
-     */
-    name_en: string;
-    /**
-     * Name De
-     */
-    name_de: string;
-};
-
-/**
- * UserInDB
- * API return schema of a user.
- */
-export type UserInDb = {
-    /**
-     * Id
-     */
-    id: number;
-    /**
-     * Username
-     */
-    username: string;
-    /**
-     * Email
-     */
-    email: string;
-    /**
-     * Active
-     */
-    active: boolean;
-    /**
-     * Admin
-     */
-    admin: boolean;
-    /**
-     * Receive Newsletter
-     */
-    receive_newsletter: boolean;
-};
-
-/**
- * UserMail
- * API input schema for email addresses.
- */
-export type UserMail = {
-    /**
-     * Email
-     */
-    email: string;
-};
-
-/**
- * UserSuperUserUpdate
- * API input schema to update a user as a superuser.
- */
-export type UserSuperUserUpdate = {
-    /**
-     * Email
-     */
-    email?: string | null;
-    /**
-     * Username
-     */
-    username?: string | null;
-    /**
-     * Password
-     */
-    password?: string | null;
-    /**
-     * Receive Newsletter
-     */
-    receive_newsletter?: boolean | null;
-    /**
-     * Active
-     */
-    active?: boolean | null;
-    /**
-     * Admin
-     */
-    admin?: boolean | null;
-    /**
-     * Verified
-     */
-    verified?: boolean | null;
-};
-
-/**
- * UserUpdate
- * API input schema to update a user.
- */
-export type UserUpdate = {
-    /**
-     * Email
-     */
-    email?: string | null;
-    /**
-     * Username
-     */
-    username?: string | null;
-    /**
-     * Password
-     */
-    password?: string | null;
-    /**
-     * Receive Newsletter
-     */
-    receive_newsletter?: boolean | null;
-};
-
-/**
- * ValidationError
- */
-export type ValidationError = {
-    /**
-     * Location
-     */
-    loc: Array<string | number>;
-    /**
-     * Message
-     */
-    msg: string;
-    /**
-     * Error Type
-     */
-    type: string;
-};
-
-export type NewEventData = {
-    body: EventCreate;
-    path?: never;
-    query?: never;
-    url: '/v1/event/new';
-};
-
-export type NewEventErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type NewEventError = NewEventErrors[keyof NewEventErrors];
-
-export type NewEventResponses = {
-    /**
-     * Response New Event V1 Event New Post
-     * Successful Response
-     */
-    200: Array<EventInDb>;
-};
-
-export type NewEventResponse = NewEventResponses[keyof NewEventResponses];
-
-export type PaginatedAllData = {
-    body: ListEventQuery;
-    headers?: {
-        /**
-         * User-Agent
-         */
-        'user-agent'?: string | null;
-    };
-    path?: never;
-    query?: never;
-    url: '/v1/event/all';
-};
-
-export type PaginatedAllErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type PaginatedAllError = PaginatedAllErrors[keyof PaginatedAllErrors];
-
-export type PaginatedAllResponses = {
-    /**
-     * Successful Response
-     */
-    200: ListEventResult;
-};
-
-export type PaginatedAllResponse = PaginatedAllResponses[keyof PaginatedAllResponses];
-
-export type SearchByPerimeterData = {
-    body: EventPerimeterSearch;
-    headers?: {
-        /**
-         * User-Agent
-         */
-        'user-agent'?: string | null;
-    };
-    path?: never;
-    query?: never;
-    url: '/v1/event/perimeter-search';
-};
-
-export type SearchByPerimeterErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type SearchByPerimeterError = SearchByPerimeterErrors[keyof SearchByPerimeterErrors];
-
-export type SearchByPerimeterResponses = {
-    /**
-     * Response Search By Perimeter V1 Event Perimeter Search Post
-     * Successful Response
-     */
-    200: Array<EventInDb>;
-};
-
-export type SearchByPerimeterResponse = SearchByPerimeterResponses[keyof SearchByPerimeterResponses];
-
-export type SearchByPerimeterCountData = {
-    body: EventPerimeterSearch;
-    path?: never;
-    query?: never;
-    url: '/v1/event/perimeter-search/count';
-};
-
-export type SearchByPerimeterCountErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type SearchByPerimeterCountError = SearchByPerimeterCountErrors[keyof SearchByPerimeterCountErrors];
-
-export type SearchByPerimeterCountResponses = {
-    /**
-     * Response Search By Perimeter Count V1 Event Perimeter Search Count Post
-     * Successful Response
-     */
-    200: number;
-};
-
-export type SearchByPerimeterCountResponse = SearchByPerimeterCountResponses[keyof SearchByPerimeterCountResponses];
-
-export type SearchByAddressData = {
-    body: EventAddressSearch;
-    headers?: {
-        /**
-         * User-Agent
-         */
-        'user-agent'?: string | null;
-    };
-    path?: never;
-    query: {
-        address_language: AvailableLanguages;
-    };
-    url: '/v1/event/address-search';
-};
-
-export type SearchByAddressErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type SearchByAddressError = SearchByAddressErrors[keyof SearchByAddressErrors];
-
-export type SearchByAddressResponses = {
-    /**
-     * Response Search By Address V1 Event Address Search Post
-     * Successful Response
-     */
-    200: Array<EventInDb>;
-};
-
-export type SearchByAddressResponse = SearchByAddressResponses[keyof SearchByAddressResponses];
-
-export type SearchByAddressCountData = {
-    body: EventAddressSearch;
-    path?: never;
-    query: {
-        address_language: AvailableLanguages;
-    };
-    url: '/v1/event/address-search/count';
-};
-
-export type SearchByAddressCountErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type SearchByAddressCountError = SearchByAddressCountErrors[keyof SearchByAddressCountErrors];
-
-export type SearchByAddressCountResponses = {
-    /**
-     * Response Search By Address Count V1 Event Address Search Count Post
-     * Successful Response
-     */
-    200: number;
-};
-
-export type SearchByAddressCountResponse = SearchByAddressCountResponses[keyof SearchByAddressCountResponses];
-
-export type GetMultipleEventByIdData = {
-    /**
-     * Event Ids
-     */
-    body: Array<number>;
-    path?: never;
-    query?: never;
-    url: '/v1/event/multi';
-};
-
-export type GetMultipleEventByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetMultipleEventByIdError = GetMultipleEventByIdErrors[keyof GetMultipleEventByIdErrors];
-
-export type GetMultipleEventByIdResponses = {
-    /**
-     * Response Get Multiple Event By Id V1 Event Multi Post
-     * Successful Response
-     */
-    200: Array<EventInDb>;
-};
-
-export type GetMultipleEventByIdResponse = GetMultipleEventByIdResponses[keyof GetMultipleEventByIdResponses];
-
-export type DeleteEventData = {
-    body?: never;
-    path: {
-        /**
-         * Event Id
-         */
-        event_id: number;
-    };
-    query?: never;
-    url: '/v1/event/{event_id}';
-};
-
-export type DeleteEventErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type DeleteEventError = DeleteEventErrors[keyof DeleteEventErrors];
-
-export type DeleteEventResponses = {
-    /**
-     * Response Delete Event V1 Event  Event Id  Delete
-     * Successful Response
-     */
-    200: string;
-};
-
-export type DeleteEventResponse = DeleteEventResponses[keyof DeleteEventResponses];
-
-export type GetEventByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Event Id
-         */
-        event_id: number;
-    };
-    query?: never;
-    url: '/v1/event/{event_id}';
-};
-
-export type GetEventByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetEventByIdError = GetEventByIdErrors[keyof GetEventByIdErrors];
-
-export type GetEventByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: EventInDb;
-};
-
-export type GetEventByIdResponse = GetEventByIdResponses[keyof GetEventByIdResponses];
-
-export type UpdateEventData = {
-    body: EventUpdate;
-    path: {
-        /**
-         * Event Id
-         */
-        event_id: number;
-    };
-    query?: never;
-    url: '/v1/event/{event_id}';
-};
-
-export type UpdateEventErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateEventError = UpdateEventErrors[keyof UpdateEventErrors];
-
-export type UpdateEventResponses = {
-    /**
-     * Successful Response
-     */
-    200: EventInDb;
-};
-
-export type UpdateEventResponse = UpdateEventResponses[keyof UpdateEventResponses];
-
-export type GetEventOrganizerData = {
-    body?: never;
-    path: {
-        /**
-         * Event Id
-         */
-        event_id: number;
-    };
-    query?: never;
-    url: '/v1/event/{event_id}/organizer';
-};
-
-export type GetEventOrganizerErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetEventOrganizerError = GetEventOrganizerErrors[keyof GetEventOrganizerErrors];
-
-export type GetEventOrganizerResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceInDb;
-};
-
-export type GetEventOrganizerResponse = GetEventOrganizerResponses[keyof GetEventOrganizerResponses];
-
-export type FetchNotificationsData = {
-    body: NotificationFetchQuery;
-    headers?: {
-        /**
-         * User-Agent
-         */
-        'user-agent'?: string | null;
-    };
-    path?: never;
-    query?: {
-        address_language?: AvailableLanguages;
-    };
-    url: '/v1/event/fetch-notifications';
-};
-
-export type FetchNotificationsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type FetchNotificationsError = FetchNotificationsErrors[keyof FetchNotificationsErrors];
-
-export type FetchNotificationsResponses = {
-    /**
-     * Successful Response
-     */
-    200: NotificationFetchResponse;
-};
-
-export type FetchNotificationsResponse = FetchNotificationsResponses[keyof FetchNotificationsResponses];
-
-export type AllEventTypesData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/event_type/';
-};
-
-export type AllEventTypesResponses = {
-    /**
-     * Response All Event Types V1 Event Type  Get
-     * Successful Response
-     */
-    200: Array<EventTypeInDb>;
-};
-
-export type AllEventTypesResponse = AllEventTypesResponses[keyof AllEventTypesResponses];
-
-export type NewEventTypeData = {
-    body: EventTypeCreate;
-    path?: never;
-    query?: never;
-    url: '/v1/event_type/new';
-};
-
-export type NewEventTypeErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type NewEventTypeError = NewEventTypeErrors[keyof NewEventTypeErrors];
-
-export type NewEventTypeResponses = {
-    /**
-     * Successful Response
-     */
-    200: EventTypeInDb;
-};
-
-export type NewEventTypeResponse = NewEventTypeResponses[keyof NewEventTypeResponses];
-
-export type GetEventTypeByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Event Type Id
-         */
-        event_type_id: number;
-    };
-    query?: never;
-    url: '/v1/event_type/{event_type_id}';
-};
-
-export type GetEventTypeByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetEventTypeByIdError = GetEventTypeByIdErrors[keyof GetEventTypeByIdErrors];
-
-export type GetEventTypeByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: EventTypeInDb;
-};
-
-export type GetEventTypeByIdResponse = GetEventTypeByIdResponses[keyof GetEventTypeByIdResponses];
-
-export type UpdateEventTypeData = {
-    body: EventTypeUpdate;
-    path: {
-        /**
-         * Event Type Id
-         */
-        event_type_id: number;
-    };
-    query?: never;
-    url: '/v1/event_type/{event_type_id}';
-};
-
-export type UpdateEventTypeErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateEventTypeError = UpdateEventTypeErrors[keyof UpdateEventTypeErrors];
-
-export type UpdateEventTypeResponses = {
-    /**
-     * Successful Response
-     */
-    200: EventTypeInDb;
-};
-
-export type UpdateEventTypeResponse = UpdateEventTypeResponses[keyof UpdateEventTypeResponses];
-
-export type DeleteEventTypeByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Type Id
-         */
-        type_id: number;
-    };
-    query?: never;
-    url: '/v1/event_type/{type_id}';
-};
-
-export type DeleteEventTypeByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type DeleteEventTypeByIdError = DeleteEventTypeByIdErrors[keyof DeleteEventTypeByIdErrors];
-
-export type DeleteEventTypeByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: EventTypeInDb;
-};
-
-export type DeleteEventTypeByIdResponse = DeleteEventTypeByIdResponses[keyof DeleteEventTypeByIdResponses];
-
-export type GetCreateCountriesData = {
-    body?: never;
-    path?: never;
-    query?: {
-        language?: AvailableLanguages;
-    };
-    url: '/v1/location/available-countries/create';
-};
-
-export type GetCreateCountriesErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetCreateCountriesError = GetCreateCountriesErrors[keyof GetCreateCountriesErrors];
-
-export type GetCreateCountriesResponses = {
-    /**
-     * Response Get Create Countries V1 Location Available Countries Create Get
-     * Successful Response
-     */
-    200: Array<CountryInDb>;
-};
-
-export type GetCreateCountriesResponse = GetCreateCountriesResponses[keyof GetCreateCountriesResponses];
-
-export type GetSearchCountriesData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/location/available-countries/search';
-};
-
-export type GetSearchCountriesResponses = {
-    /**
-     * Response Get Search Countries V1 Location Available Countries Search Get
-     * Successful Response
-     */
-    200: Array<CountryInDb>;
-};
-
-export type GetSearchCountriesResponse = GetSearchCountriesResponses[keyof GetSearchCountriesResponses];
-
-export type NewSourceData = {
-    body: SourceCreate;
-    path?: never;
-    query?: never;
-    url: '/v1/source/new';
-};
-
-export type NewSourceErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type NewSourceError = NewSourceErrors[keyof NewSourceErrors];
-
-export type NewSourceResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceInDb;
-};
-
-export type NewSourceResponse = NewSourceResponses[keyof NewSourceResponses];
-
-export type AllSourcesData = {
-    body?: never;
-    path?: never;
-    query?: {
-        /**
-         * Limit
-         */
-        limit?: number;
-        /**
-         * Offset
-         */
-        offset?: number;
-        approved?: RequestStatus;
-    };
-    url: '/v1/source/';
-};
-
-export type AllSourcesErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type AllSourcesError = AllSourcesErrors[keyof AllSourcesErrors];
-
-export type AllSourcesResponses = {
-    /**
-     * Response All Sources V1 Source  Get
-     * Successful Response
-     */
-    200: Array<number>;
-};
-
-export type AllSourcesResponse = AllSourcesResponses[keyof AllSourcesResponses];
-
-export type SearchSourceData = {
-    body: SourceAddressSearch;
-    headers?: {
-        /**
-         * User-Agent
-         */
-        'user-agent'?: string | null;
-    };
-    path?: never;
-    query: {
-        address_language: AvailableLanguages;
-    };
-    url: '/v1/source/address-search';
-};
-
-export type SearchSourceErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type SearchSourceError = SearchSourceErrors[keyof SearchSourceErrors];
-
-export type SearchSourceResponses = {
-    /**
-     * Response Search Source V1 Source Address Search Post
-     * Successful Response
-     */
-    200: Array<number>;
-};
-
-export type SearchSourceResponse = SearchSourceResponses[keyof SearchSourceResponses];
-
-export type GetSourceByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}';
-};
-
-export type GetSourceByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetSourceByIdError = GetSourceByIdErrors[keyof GetSourceByIdErrors];
-
-export type GetSourceByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceInDb;
-};
-
-export type GetSourceByIdResponse = GetSourceByIdResponses[keyof GetSourceByIdResponses];
-
-export type UpdateSourceData = {
-    body: SourceUpdateUser;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}';
-};
-
-export type UpdateSourceErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateSourceError = UpdateSourceErrors[keyof UpdateSourceErrors];
-
-export type UpdateSourceResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceInDb;
-};
-
-export type UpdateSourceResponse = UpdateSourceResponses[keyof UpdateSourceResponses];
-
-export type GetSourceAdminsByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}/admins';
-};
-
-export type GetSourceAdminsByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetSourceAdminsByIdError = GetSourceAdminsByIdErrors[keyof GetSourceAdminsByIdErrors];
-
-export type GetSourceAdminsByIdResponses = {
-    /**
-     * Response Get Source Admins By Id V1 Source  Source Id  Admins Get
-     * Successful Response
-     */
-    200: Array<UserInDb>;
-};
-
-export type GetSourceAdminsByIdResponse = GetSourceAdminsByIdResponses[keyof GetSourceAdminsByIdResponses];
-
-export type GetSourceContactByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}/internal_contact';
-};
-
-export type GetSourceContactByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetSourceContactByIdError = GetSourceContactByIdErrors[keyof GetSourceContactByIdErrors];
-
-export type GetSourceContactByIdResponses = {
-    /**
-     * Response Get Source Contact By Id V1 Source  Source Id  Internal Contact Get
-     * Successful Response
-     */
-    200: string;
-};
-
-export type GetSourceContactByIdResponse = GetSourceContactByIdResponses[keyof GetSourceContactByIdResponses];
-
-export type UpdateSourceAdminData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query: {
-        approval_status: RequestStatus;
-    };
-    url: '/v1/source/{source_id}/approval_status';
-};
-
-export type UpdateSourceAdminErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateSourceAdminError = UpdateSourceAdminErrors[keyof UpdateSourceAdminErrors];
-
-export type UpdateSourceAdminResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceInDb;
-};
-
-export type UpdateSourceAdminResponse = UpdateSourceAdminResponses[keyof UpdateSourceAdminResponses];
-
-export type AddSourceAdminData = {
-    body: UserMail;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}/add_admin';
-};
-
-export type AddSourceAdminErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type AddSourceAdminError = AddSourceAdminErrors[keyof AddSourceAdminErrors];
-
-export type AddSourceAdminResponses = {
-    /**
-     * Response Add Source Admin V1 Source  Source Id  Add Admin Put
-     * Successful Response
-     */
-    200: Array<UserInDb>;
-};
-
-export type AddSourceAdminResponse = AddSourceAdminResponses[keyof AddSourceAdminResponses];
-
-export type RemoveSourceAdminData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-        /**
-         * Admin User Id
-         */
-        admin_user_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}/remove_admin/{admin_user_id}';
-};
-
-export type RemoveSourceAdminErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type RemoveSourceAdminError = RemoveSourceAdminErrors[keyof RemoveSourceAdminErrors];
-
-export type RemoveSourceAdminResponses = {
-    /**
-     * Response Remove Source Admin V1 Source  Source Id  Remove Admin  Admin User Id  Put
-     * Successful Response
-     */
-    200: Array<UserInDb>;
-};
-
-export type RemoveSourceAdminResponse = RemoveSourceAdminResponses[keyof RemoveSourceAdminResponses];
-
-export type FutureEventsData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: {
-        /**
-         * Limit
-         */
-        limit?: number;
-        /**
-         * Offset
-         */
-        offset?: number;
-    };
-    url: '/v1/source/{source_id}/future_events';
-};
-
-export type FutureEventsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type FutureEventsError = FutureEventsErrors[keyof FutureEventsErrors];
-
-export type FutureEventsResponses = {
-    /**
-     * Response Future Events V1 Source  Source Id  Future Events Get
-     * Successful Response
-     */
-    200: Array<number>;
-};
-
-export type FutureEventsResponse = FutureEventsResponses[keyof FutureEventsResponses];
-
-export type PastEventsData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: {
-        /**
-         * Limit
-         */
-        limit?: number;
-        /**
-         * Offset
-         */
-        offset?: number;
-    };
-    url: '/v1/source/{source_id}/past_events';
-};
-
-export type PastEventsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type PastEventsError = PastEventsErrors[keyof PastEventsErrors];
-
-export type PastEventsResponses = {
-    /**
-     * Response Past Events V1 Source  Source Id  Past Events Get
-     * Successful Response
-     */
-    200: Array<number>;
-};
-
-export type PastEventsResponse = PastEventsResponses[keyof PastEventsResponses];
-
-export type EditableEventsData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: {
-        /**
-         * Limit
-         */
-        limit?: number;
-        /**
-         * Offset
-         */
-        offset?: number;
-    };
-    url: '/v1/source/{source_id}/editable_events';
-};
-
-export type EditableEventsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type EditableEventsError = EditableEventsErrors[keyof EditableEventsErrors];
-
-export type EditableEventsResponses = {
-    /**
-     * Response Editable Events V1 Source  Source Id  Editable Events Get
-     * Successful Response
-     */
-    200: Array<number>;
-};
-
-export type EditableEventsResponse = EditableEventsResponses[keyof EditableEventsResponses];
-
-export type GetSourceTitleImageData = {
-    body?: never;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}/title-image';
-};
-
-export type GetSourceTitleImageErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetSourceTitleImageError = GetSourceTitleImageErrors[keyof GetSourceTitleImageErrors];
-
-export type GetSourceTitleImageResponses = {
-    /**
-     * Successful Response
-     */
-    200: unknown;
-};
-
-export type UpsertTitleImageData = {
-    body: BodyUpsertTitleImageV1SourceSourceIdTitleImagePost;
-    path: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-    };
-    query?: never;
-    url: '/v1/source/{source_id}/title-image';
-};
-
-export type UpsertTitleImageErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpsertTitleImageError = UpsertTitleImageErrors[keyof UpsertTitleImageErrors];
-
-export type UpsertTitleImageResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceInDb;
-};
-
-export type UpsertTitleImageResponse = UpsertTitleImageResponses[keyof UpsertTitleImageResponses];
-
-export type AllSourceTypesData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/source_type/';
-};
-
-export type AllSourceTypesResponses = {
-    /**
-     * Response All Source Types V1 Source Type  Get
-     * Successful Response
-     */
-    200: Array<SourceTypeInDb>;
-};
-
-export type AllSourceTypesResponse = AllSourceTypesResponses[keyof AllSourceTypesResponses];
-
-export type NewSourceTypeData = {
-    body: SourceTypeCreate;
-    path?: never;
-    query?: never;
-    url: '/v1/source_type/new';
-};
-
-export type NewSourceTypeErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type NewSourceTypeError = NewSourceTypeErrors[keyof NewSourceTypeErrors];
-
-export type NewSourceTypeResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceTypeInDb;
-};
-
-export type NewSourceTypeResponse = NewSourceTypeResponses[keyof NewSourceTypeResponses];
-
-export type GetSourceTypeByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Source Type Id
-         */
-        source_type_id: number;
-    };
-    query?: never;
-    url: '/v1/source_type/{source_type_id}';
-};
-
-export type GetSourceTypeByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetSourceTypeByIdError = GetSourceTypeByIdErrors[keyof GetSourceTypeByIdErrors];
-
-export type GetSourceTypeByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceTypeInDb;
-};
-
-export type GetSourceTypeByIdResponse = GetSourceTypeByIdResponses[keyof GetSourceTypeByIdResponses];
-
-export type UpdateSourceTypeData = {
-    body: SourceTypeUpdate;
-    path: {
-        /**
-         * Source Type Id
-         */
-        source_type_id: number;
-    };
-    query?: never;
-    url: '/v1/source_type/{source_type_id}';
-};
-
-export type UpdateSourceTypeErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateSourceTypeError = UpdateSourceTypeErrors[keyof UpdateSourceTypeErrors];
-
-export type UpdateSourceTypeResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceTypeInDb;
-};
-
-export type UpdateSourceTypeResponse = UpdateSourceTypeResponses[keyof UpdateSourceTypeResponses];
-
-export type DeleteSourceTypeByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Type Id
-         */
-        type_id: number;
-    };
-    query?: never;
-    url: '/v1/source_type/{type_id}';
-};
-
-export type DeleteSourceTypeByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type DeleteSourceTypeByIdError = DeleteSourceTypeByIdErrors[keyof DeleteSourceTypeByIdErrors];
-
-export type DeleteSourceTypeByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: SourceTypeInDb;
-};
-
-export type DeleteSourceTypeByIdResponse = DeleteSourceTypeByIdResponses[keyof DeleteSourceTypeByIdResponses];
-
-export type AllTopicsData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/topic/';
-};
-
-export type AllTopicsResponses = {
-    /**
-     * Response All Topics V1 Topic  Get
-     * Successful Response
-     */
-    200: Array<TopicInDb>;
-};
-
-export type AllTopicsResponse = AllTopicsResponses[keyof AllTopicsResponses];
-
-export type NewTopicData = {
-    body: TopicCreate;
-    path?: never;
-    query?: never;
-    url: '/v1/topic/new';
-};
-
-export type NewTopicErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type NewTopicError = NewTopicErrors[keyof NewTopicErrors];
-
-export type NewTopicResponses = {
-    /**
-     * Successful Response
-     */
-    200: TopicInDb;
-};
-
-export type NewTopicResponse = NewTopicResponses[keyof NewTopicResponses];
-
-export type UpdateTopicData = {
-    body: TopicUpdate;
-    path: {
-        /**
-         * Event Topic Id
-         */
-        event_topic_id: number;
-    };
-    query?: never;
-    url: '/v1/topic/{event_topic_id}';
-};
-
-export type UpdateTopicErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateTopicError = UpdateTopicErrors[keyof UpdateTopicErrors];
-
-export type UpdateTopicResponses = {
-    /**
-     * Successful Response
-     */
-    200: TopicInDb;
-};
-
-export type UpdateTopicResponse = UpdateTopicResponses[keyof UpdateTopicResponses];
-
-export type DeleteTopicByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Topic Id
-         */
-        topic_id: number;
-    };
-    query?: never;
-    url: '/v1/topic/{topic_id}';
-};
-
-export type DeleteTopicByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type DeleteTopicByIdError = DeleteTopicByIdErrors[keyof DeleteTopicByIdErrors];
-
-export type DeleteTopicByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: TopicInDb;
-};
-
-export type DeleteTopicByIdResponse = DeleteTopicByIdResponses[keyof DeleteTopicByIdResponses];
-
-export type GetTopicByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Topic Id
-         */
-        topic_id: number;
-    };
-    query?: never;
-    url: '/v1/topic/{topic_id}';
-};
-
-export type GetTopicByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetTopicByIdError = GetTopicByIdErrors[keyof GetTopicByIdErrors];
-
-export type GetTopicByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: TopicInDb;
-};
-
-export type GetTopicByIdResponse = GetTopicByIdResponses[keyof GetTopicByIdResponses];
-
-export type AllInformationData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/information/';
-};
-
-export type AllInformationResponses = {
-    /**
-     * Response All Information V1 Information  Post
-     * Successful Response
-     */
-    200: Array<InformationInDb>;
-};
-
-export type AllInformationResponse = AllInformationResponses[keyof AllInformationResponses];
-
-export type NewInformationData = {
-    body: InformationCreate;
-    path?: never;
-    query: {
-        address_language: AvailableLanguages;
-    };
-    url: '/v1/information/new';
-};
-
-export type NewInformationErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type NewInformationError = NewInformationErrors[keyof NewInformationErrors];
-
-export type NewInformationResponses = {
-    /**
-     * Successful Response
-     */
-    200: InformationInDb;
-};
-
-export type NewInformationResponse = NewInformationResponses[keyof NewInformationResponses];
-
-export type GetAvailableCitiesData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/information/available-cities';
-};
-
-export type GetAvailableCitiesResponses = {
-    /**
-     * Response Get Available Cities V1 Information Available Cities Get
-     * Successful Response
-     */
-    200: Array<string>;
-};
-
-export type GetAvailableCitiesResponse = GetAvailableCitiesResponses[keyof GetAvailableCitiesResponses];
-
-export type FindInformationData = {
-    body: InformationQuery;
-    path?: never;
-    query: {
-        address_language: AvailableLanguages;
-    };
-    url: '/v1/information/find';
-};
-
-export type FindInformationErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type FindInformationError = FindInformationErrors[keyof FindInformationErrors];
-
-export type FindInformationResponses = {
-    /**
-     * Response Find Information V1 Information Find Post
-     * Successful Response
-     */
-    200: Array<InformationInDb>;
-};
-
-export type FindInformationResponse = FindInformationResponses[keyof FindInformationResponses];
-
-export type DeleteInformationData = {
-    body?: never;
-    path: {
-        /**
-         * Information Id
-         */
-        information_id: number;
-    };
-    query?: never;
-    url: '/v1/information/{information_id}';
-};
-
-export type DeleteInformationErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type DeleteInformationError = DeleteInformationErrors[keyof DeleteInformationErrors];
-
-export type DeleteInformationResponses = {
-    /**
-     * Successful Response
-     */
-    200: InformationInDb;
-};
-
-export type DeleteInformationResponse = DeleteInformationResponses[keyof DeleteInformationResponses];
-
-export type UpdateInformationData = {
-    body: InformationUpdate;
-    path: {
-        /**
-         * Information Id
-         */
-        information_id: number;
-    };
-    query?: never;
-    url: '/v1/information/{information_id}';
-};
-
-export type UpdateInformationErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateInformationError = UpdateInformationErrors[keyof UpdateInformationErrors];
-
-export type UpdateInformationResponses = {
-    /**
-     * Successful Response
-     */
-    200: InformationInDb;
-};
-
-export type UpdateInformationResponse = UpdateInformationResponses[keyof UpdateInformationResponses];
-
-export type GetAccessTokenByLoginData = {
-    body: BodyGetAccessTokenByLoginV1UserGetTokenPost;
-    path?: never;
-    query?: never;
-    url: '/v1/user/get_token';
-};
-
-export type GetAccessTokenByLoginErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetAccessTokenByLoginError = GetAccessTokenByLoginErrors[keyof GetAccessTokenByLoginErrors];
-
-export type GetAccessTokenByLoginResponses = {
-    /**
-     * Successful Response
-     */
-    200: Token;
-};
-
-export type GetAccessTokenByLoginResponse = GetAccessTokenByLoginResponses[keyof GetAccessTokenByLoginResponses];
-
-export type GetAccessTokenByTokenData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/user/refresh_token';
-};
-
-export type GetAccessTokenByTokenResponses = {
-    /**
-     * Successful Response
-     */
-    200: Token;
-};
-
-export type GetAccessTokenByTokenResponse = GetAccessTokenByTokenResponses[keyof GetAccessTokenByTokenResponses];
-
-export type ResetPasswordData = {
-    body: UserMail;
-    path?: never;
-    query?: never;
-    url: '/v1/user/reset-password';
-};
-
-export type ResetPasswordErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type ResetPasswordError = ResetPasswordErrors[keyof ResetPasswordErrors];
-
-export type ResetPasswordResponses = {
-    /**
-     * Response Reset Password V1 User Reset Password Post
-     * Successful Response
-     */
-    200: null;
-};
-
-export type ResetPasswordResponse = ResetPasswordResponses[keyof ResetPasswordResponses];
-
-export type DeleteOwnUserData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/user/me';
-};
-
-export type DeleteOwnUserResponses = {
-    /**
-     * Successful Response
-     */
-    200: UserInDb;
-};
-
-export type DeleteOwnUserResponse = DeleteOwnUserResponses[keyof DeleteOwnUserResponses];
-
-export type GetOwnUserData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/user/me';
-};
-
-export type GetOwnUserResponses = {
-    /**
-     * Successful Response
-     */
-    200: UserInDb;
-};
-
-export type GetOwnUserResponse = GetOwnUserResponses[keyof GetOwnUserResponses];
-
-export type UpdateOwnUserData = {
-    body: UserUpdate;
-    path?: never;
-    query?: never;
-    url: '/v1/user/me';
-};
-
-export type UpdateOwnUserErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateOwnUserError = UpdateOwnUserErrors[keyof UpdateOwnUserErrors];
-
-export type UpdateOwnUserResponses = {
-    /**
-     * Successful Response
-     */
-    200: UserInDb;
-};
-
-export type UpdateOwnUserResponse = UpdateOwnUserResponses[keyof UpdateOwnUserResponses];
-
-export type GetOwnSourcesData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/user/me/sources';
-};
-
-export type GetOwnSourcesResponses = {
-    /**
-     * Response Get Own Sources V1 User Me Sources Get
-     * Successful Response
-     */
-    200: Array<SourceInDb>;
-};
-
-export type GetOwnSourcesResponse = GetOwnSourcesResponses[keyof GetOwnSourcesResponses];
-
-export type GetAdminIdsData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/user/admins';
-};
-
-export type GetAdminIdsResponses = {
-    /**
-     * Response Get Admin Ids V1 User Admins Get
-     * Successful Response
-     */
-    200: Array<number>;
-};
-
-export type GetAdminIdsResponse = GetAdminIdsResponses[keyof GetAdminIdsResponses];
-
-export type MakeAdminData = {
-    body: UserMail;
-    path?: never;
-    query?: never;
-    url: '/v1/user/make_admin';
-};
-
-export type MakeAdminErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type MakeAdminError = MakeAdminErrors[keyof MakeAdminErrors];
-
-export type MakeAdminResponses = {
-    /**
-     * Successful Response
-     */
-    200: UserInDb;
-};
-
-export type MakeAdminResponse = MakeAdminResponses[keyof MakeAdminResponses];
-
-export type GetUserByIdData = {
-    body?: never;
-    path: {
-        /**
-         * User Id
-         */
-        user_id: number;
-    };
-    query?: never;
-    url: '/v1/user/{user_id}';
-};
-
-export type GetUserByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetUserByIdError = GetUserByIdErrors[keyof GetUserByIdErrors];
-
-export type GetUserByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: UserInDb;
-};
-
-export type GetUserByIdResponse = GetUserByIdResponses[keyof GetUserByIdResponses];
-
-export type UpdateUserByIdData = {
-    body: UserSuperUserUpdate;
-    path: {
-        /**
-         * User Id
-         */
-        user_id: number;
-    };
-    query?: never;
-    url: '/v1/user/{user_id}';
-};
-
-export type UpdateUserByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateUserByIdError = UpdateUserByIdErrors[keyof UpdateUserByIdErrors];
-
-export type UpdateUserByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: UserInDb;
-};
-
-export type UpdateUserByIdResponse = UpdateUserByIdResponses[keyof UpdateUserByIdResponses];
-
-export type GetSearchLanguagesData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/language/available';
-};
-
-export type GetSearchLanguagesResponses = {
-    /**
-     * Response Get Search Languages V1 Language Available Get
-     * Successful Response
-     */
-    200: Array<string>;
-};
-
-export type GetSearchLanguagesResponse = GetSearchLanguagesResponses[keyof GetSearchLanguagesResponses];
-
-export type GetAvailableDocumentsData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/document/available';
-};
-
-export type GetAvailableDocumentsResponses = {
-    /**
-     * Response Get Available Documents V1 Document Available Get
-     * Successful Response
-     */
-    200: Array<InternalDocumentInDb>;
-};
-
-export type GetAvailableDocumentsResponse = GetAvailableDocumentsResponses[keyof GetAvailableDocumentsResponses];
-
-export type DeleteDocumentByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Document Id
-         */
-        document_id: number;
-    };
-    query?: never;
-    url: '/v1/document/{document_id}';
-};
-
-export type DeleteDocumentByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type DeleteDocumentByIdError = DeleteDocumentByIdErrors[keyof DeleteDocumentByIdErrors];
-
-export type DeleteDocumentByIdResponses = {
-    /**
-     * Response Delete Document By Id V1 Document  Document Id  Delete
-     * Successful Response
-     */
-    200: string;
-};
-
-export type DeleteDocumentByIdResponse = DeleteDocumentByIdResponses[keyof DeleteDocumentByIdResponses];
-
-export type GetDocumentByIdData = {
-    body?: never;
-    path: {
-        /**
-         * Document Id
-         */
-        document_id: number;
-    };
-    query?: never;
-    url: '/v1/document/{document_id}';
-};
-
-export type GetDocumentByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetDocumentByIdError = GetDocumentByIdErrors[keyof GetDocumentByIdErrors];
-
-export type GetDocumentByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: unknown;
-};
-
-export type UploadDocumentData = {
-    body: BodyUploadDocumentV1DocumentUploadPost;
-    path?: never;
-    query: {
-        language: AvailableLanguages;
-        document_type: InternalDocumentType;
-        /**
-         * Display Name
-         */
-        display_name: string;
-    };
-    url: '/v1/document/upload';
-};
-
-export type UploadDocumentErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UploadDocumentError = UploadDocumentErrors[keyof UploadDocumentErrors];
-
-export type UploadDocumentResponses = {
-    /**
-     * Response Upload Document V1 Document Upload Post
-     * Successful Response
-     */
-    200: string;
-};
-
-export type UploadDocumentResponse = UploadDocumentResponses[keyof UploadDocumentResponses];
-
-export type GetEventAnalysisData = {
-    /**
-     * Queries
-     */
-    body: Array<AnalysisEventQuery>;
-    path?: never;
-    query?: never;
-    url: '/v1/analysis/event';
-};
-
-export type GetEventAnalysisErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetEventAnalysisError = GetEventAnalysisErrors[keyof GetEventAnalysisErrors];
-
-export type GetEventAnalysisResponses = {
-    /**
-     * Response Get Event Analysis V1 Analysis Event Post
-     * Successful Response
-     */
-    200: Array<AnalysisEventResult>;
-};
-
-export type GetEventAnalysisResponse = GetEventAnalysisResponses[keyof GetEventAnalysisResponses];
-
-export type ReadApplicationSettingsData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/admin/settings/application';
-};
-
-export type ReadApplicationSettingsResponses = {
-    /**
-     * Successful Response
-     */
-    200: ApplicationSettingsInDb;
-};
-
-export type ReadApplicationSettingsResponse = ReadApplicationSettingsResponses[keyof ReadApplicationSettingsResponses];
-
-export type UpdateApplicationSettingsData = {
-    body: ApplicationSettingsInDb;
-    path?: never;
-    query?: never;
-    url: '/v1/admin/settings/application';
-};
-
-export type UpdateApplicationSettingsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UpdateApplicationSettingsError = UpdateApplicationSettingsErrors[keyof UpdateApplicationSettingsErrors];
-
-export type UpdateApplicationSettingsResponses = {
-    /**
-     * Successful Response
-     */
-    200: ApplicationSettingsInDb;
-};
-
-export type UpdateApplicationSettingsResponse = UpdateApplicationSettingsResponses[keyof UpdateApplicationSettingsResponses];
-
-export type GetAdminStatisticsData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/admin/statistics';
-};
-
-export type GetAdminStatisticsResponses = {
-    /**
-     * Successful Response
-     */
-    200: AdminStatistics;
-};
-
-export type GetAdminStatisticsResponse = GetAdminStatisticsResponses[keyof GetAdminStatisticsResponses];
-
-export type RunCleanupData = {
-    body: CleanupTasks;
-    path?: never;
-    query?: never;
-    url: '/v1/admin/cleanup';
-};
-
-export type RunCleanupErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type RunCleanupError = RunCleanupErrors[keyof RunCleanupErrors];
-
-export type RunCleanupResponses = {
-    /**
-     * Successful Response
-     */
-    200: Message;
-};
-
-export type RunCleanupResponse = RunCleanupResponses[keyof RunCleanupResponses];
-
-export type TrainData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/admin/train';
-};
-
-export type TrainResponses = {
-    /**
-     * Successful Response
-     */
-    200: Message;
-};
-
-export type TrainResponse = TrainResponses[keyof TrainResponses];
-
-export type GetQuickTagEventData = {
-    body: QuickTagRequest;
-    path?: never;
-    query?: never;
-    url: '/v1/admin/quick-tag/get';
-};
-
-export type GetQuickTagEventErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetQuickTagEventError = GetQuickTagEventErrors[keyof GetQuickTagEventErrors];
-
-export type GetQuickTagEventResponses = {
-    /**
-     * Response Get Quick Tag Event V1 Admin Quick Tag Get Post
-     * Successful Response
-     */
-    200: QuickTagPrediction | null;
-};
-
-export type GetQuickTagEventResponse = GetQuickTagEventResponses[keyof GetQuickTagEventResponses];
-
-export type QuickTagEventData = {
-    /**
-     * Topic Ids
-     */
-    body: Array<number>;
-    path?: never;
-    query: {
-        /**
-         * Event Id
-         */
-        event_id: number;
-    };
-    url: '/v1/admin/quick-tag/set';
-};
-
-export type QuickTagEventErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type QuickTagEventError = QuickTagEventErrors[keyof QuickTagEventErrors];
-
-export type QuickTagEventResponses = {
-    /**
-     * Response Quick Tag Event V1 Admin Quick Tag Set Post
-     * Successful Response
-     */
-    200: number;
-};
-
-export type QuickTagEventResponse = QuickTagEventResponses[keyof QuickTagEventResponses];
-
-export type UploadExcelData = {
-    body: BodyUploadExcelV1AdminUploadExcelPost;
-    path?: never;
-    query: {
-        /**
-         * Source Id
-         */
-        source_id: number;
-        /**
-         * Country Value
-         */
-        country_value?: string | null;
-        /**
-         * Country Column
-         */
-        country_column?: string | null;
-        /**
-         * City Value
-         */
-        city_value?: string | null;
-        /**
-         * City Column
-         */
-        city_column?: string | null;
-        /**
-         * Street Value
-         */
-        street_value?: string | null;
-        /**
-         * Street Column
-         */
-        street_column?: string | null;
-        /**
-         * Zip Code Value
-         */
-        zip_code_value?: string | null;
-        /**
-         * Zip Code Column
-         */
-        zip_code_column?: string | null;
-        /**
-         * Address Language Value
-         */
-        address_language_value?: AvailableLanguages | null;
-        /**
-         * Address Language Column
-         */
-        address_language_column?: string | null;
-        /**
-         * Name Value
-         */
-        name_value?: string | null;
-        /**
-         * Name Column
-         */
-        name_column?: string | null;
-        /**
-         * Short Description Value
-         */
-        short_description_value?: string | null;
-        /**
-         * Short Description Column
-         */
-        short_description_column?: string | null;
-        /**
-         * Description Value
-         */
-        description_value?: string | null;
-        /**
-         * Description Column
-         */
-        description_column?: string | null;
-        /**
-         * Url Value
-         */
-        url_value?: string | null;
-        /**
-         * Url Column
-         */
-        url_column?: string | null;
-        /**
-         * Start Time Value
-         */
-        start_time_value?: string | null;
-        /**
-         * Start Time Column
-         */
-        start_time_column?: string | null;
-        /**
-         * End Time Value
-         */
-        end_time_value?: string | null;
-        /**
-         * End Time Column
-         */
-        end_time_column?: string | null;
-        /**
-         * Raw Location Value
-         */
-        raw_location_value?: string | null;
-        /**
-         * Raw Location Column
-         */
-        raw_location_column?: string | null;
-        /**
-         * Raw Estimated Participants Value
-         */
-        raw_estimated_participants_value?: string | null;
-        /**
-         * Raw Estimated Participants Column
-         */
-        raw_estimated_participants_column?: string | null;
-        /**
-         * Raw Organiser Value
-         */
-        raw_organiser_value?: string | null;
-        /**
-         * Raw Organiser Column
-         */
-        raw_organiser_column?: string | null;
-        /**
-         * Type Id
-         */
-        type_id: number;
-        /**
-         * Time Parsing Format
-         */
-        time_parsing_format?: string | null;
-        /**
-         * Time Zone
-         */
-        time_zone?: string;
-    };
-    url: '/v1/admin/upload-excel';
-};
-
-export type UploadExcelErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type UploadExcelError = UploadExcelErrors[keyof UploadExcelErrors];
-
-export type UploadExcelResponses = {
-    /**
-     * Response Upload Excel V1 Admin Upload Excel Post
-     * Successful Response
-     */
-    200: Array<number>;
-};
-
-export type UploadExcelResponse = UploadExcelResponses[keyof UploadExcelResponses];
-
-export type DumpEventsData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/admin/event-dump';
-};
-
-export type DumpEventsResponses = {
-    /**
-     * Successful Response
-     */
-    200: unknown;
-};
-
-export type GetEventIcsData = {
-    body?: never;
-    path?: never;
-    query: {
-        /**
-         * Event Id
-         */
-        event_id: number;
-    };
-    url: '/v1/export/ics/event.ics';
-};
-
-export type GetEventIcsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetEventIcsError = GetEventIcsErrors[keyof GetEventIcsErrors];
-
-export type GetEventIcsResponses = {
-    /**
-     * Successful Response
-     */
-    200: unknown;
-};
-
-export type GetEventsIcsData = {
-    body?: never;
-    path?: never;
-    query?: {
-        /**
-         * Name
-         */
-        name?: string | null;
-        /**
-         * Country
-         */
-        country?: string;
-        /**
-         * City
-         */
-        city?: string;
-        /**
-         * Zip Code
-         */
-        zip_code?: string;
-        /**
-         * Type Ids
-         */
-        type_ids?: string | null;
-        /**
-         * Topic Ids
-         */
-        topic_ids?: string | null;
-        /**
-         * Organiser Ids
-         */
-        organiser_ids?: string | null;
-        /**
-         * Latitude
-         */
-        latitude?: number | null;
-        /**
-         * Longitude
-         */
-        longitude?: number | null;
-        /**
-         * Radius Km
-         */
-        radius_km?: number | null;
-        /**
-         * Limit
-         */
-        limit?: number;
-        /**
-         * Offset
-         */
-        offset?: number;
-        address_language?: AvailableLanguages;
-    };
-    url: '/v1/export/ics/events.ics';
-};
-
-export type GetEventsIcsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type GetEventsIcsError = GetEventsIcsErrors[keyof GetEventsIcsErrors];
-
-export type GetEventsIcsResponses = {
-    /**
-     * Successful Response
-     */
-    200: string;
-};
-
-export type GetEventsIcsResponse = GetEventsIcsResponses[keyof GetEventsIcsResponses];
-
-export type GetRssFeedData = {
-    body?: never;
-    path?: never;
-    query: {
-        /**
-         * Alert Name
-         */
-        alert_name: string;
-        /**
-         * Name
-         */
-        name?: string | null;
-        /**
-         * Country
-         */
-        country?: string;
-        /**
-         * City
-         */
-        city?: string;
-        /**
-         * Zip Code
-         */
-        zip_code?: string;
-        /**
-         * Type Ids
-         */
-        type_ids?: string | null;
-        /**
-         * Topic Ids
-         */
-        topic_ids?: string | null;
-        /**
-         * Organiser Ids
-         */
-        organiser_ids?: string | null;
-        /**
-         * Latitude
-         */
-        latitude?: number | null;
-        /**
-         * Longitude
-         */
-        longitude?: number | null;
-        /**
-         * Radius Km
-         */
-        radius_km?: number | null;
-        /**
-         * Limit
-         */
-        limit?: number;
-        /**
-         * Offset
-         */
-        offset?: number;
-        address_language?: AvailableLanguages;
-    };
-    url: '/v1/export/rss/feed';
+    address_language?: AvailableLanguages;
+  };
+  url: '/v1/export/rss/feed';
 };
 
 export type GetRssFeedErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
 };
 
 export type GetRssFeedError = GetRssFeedErrors[keyof GetRssFeedErrors];
 
 export type GetRssFeedResponses = {
-    /**
-     * Successful Response
-     */
-    200: unknown;
+  /**
+   * Successful Response
+   */
+  200: unknown;
 };
 
 export type GetStaticsSitemapData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/sitemaps/statics/index.xml';
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/sitemaps/statics/index.xml';
 };
 
 export type GetStaticsSitemapResponses = {
-    /**
-     * Successful Response
-     */
-    200: string;
+  /**
+   * Successful Response
+   */
+  200: string;
 };
 
-export type GetStaticsSitemapResponse = GetStaticsSitemapResponses[keyof GetStaticsSitemapResponses];
+export type GetStaticsSitemapResponse =
+  GetStaticsSitemapResponses[keyof GetStaticsSitemapResponses];
 
 export type GetSourcesSitemapData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/sitemaps/sources/index.xml';
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/sitemaps/sources/index.xml';
 };
 
 export type GetSourcesSitemapResponses = {
-    /**
-     * Successful Response
-     */
-    200: string;
+  /**
+   * Successful Response
+   */
+  200: string;
 };
 
-export type GetSourcesSitemapResponse = GetSourcesSitemapResponses[keyof GetSourcesSitemapResponses];
+export type GetSourcesSitemapResponse =
+  GetSourcesSitemapResponses[keyof GetSourcesSitemapResponses];
 
 export type GetEventsSitemapIndexData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/sitemaps/events/index.xml';
+  body?: never;
+  path?: never;
+  query?: never;
+  url: '/v1/sitemaps/events/index.xml';
 };
 
 export type GetEventsSitemapIndexResponses = {
-    /**
-     * Successful Response
-     */
-    200: string;
+  /**
+   * Successful Response
+   */
+  200: string;
 };
 
-export type GetEventsSitemapIndexResponse = GetEventsSitemapIndexResponses[keyof GetEventsSitemapIndexResponses];
+export type GetEventsSitemapIndexResponse =
+  GetEventsSitemapIndexResponses[keyof GetEventsSitemapIndexResponses];
 
 export type GetEventsSitemapData = {
-    body?: never;
-    path: {
-        language: AvailableLanguages;
-        /**
-         * Index
-         */
-        index: number;
-    };
-    query?: never;
-    url: '/v1/sitemaps/events/{language}/{index}.xml.gz';
+  body?: never;
+  path: {
+    language: AvailableLanguages;
+    /**
+     * Index
+     */
+    index: number;
+  };
+  query?: never;
+  url: '/v1/sitemaps/events/{language}/{index}.xml.gz';
 };
 
 export type GetEventsSitemapErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
 };
 
-export type GetEventsSitemapError = GetEventsSitemapErrors[keyof GetEventsSitemapErrors];
+export type GetEventsSitemapError =
+  GetEventsSitemapErrors[keyof GetEventsSitemapErrors];
 
 export type GetEventsSitemapResponses = {
-    /**
-     * Successful Response
-     */
-    200: string;
+  /**
+   * Successful Response
+   */
+  200: string;
 };
 
-export type GetEventsSitemapResponse = GetEventsSitemapResponses[keyof GetEventsSitemapResponses];
+export type GetEventsSitemapResponse =
+  GetEventsSitemapResponses[keyof GetEventsSitemapResponses];
 
 export type ClientOptions = {
-    baseUrl: 'https://api.demonstrations.org' | (string & {});
+  baseUrl: 'https://api.demonstrations.org' | (string & {});
 };

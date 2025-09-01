@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX } from 'react';
 
 interface NavigationButtonProps {
   label: string;
@@ -7,12 +7,17 @@ interface NavigationButtonProps {
   selected?: boolean;
 }
 
-const NavigationButton = ({ label, onClick, direction, selected = false }: NavigationButtonProps): JSX.Element => (
-  <button 
+const NavigationButton = ({
+  label,
+  onClick,
+  direction,
+  selected = false,
+}: NavigationButtonProps): JSX.Element => (
+  <button
     onClick={onClick}
     className={`px-4 py-1.5 text-sm rounded-full transition-colors flex items-center gap-1 shadow-sm ${
-      selected 
-        ? 'bg-blue-100 text-blue-800 font-semibold' 
+      selected
+        ? 'bg-blue-100 text-blue-800 font-semibold'
         : 'bg-accent text-accent-foreground hover:bg-accent/90'
     }`}
   >

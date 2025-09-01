@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { getDateRange } from "./timeUtils";
+import { useState } from 'react';
+import { getDateRange } from './timeUtils';
 
 export const useDateNavigation = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
@@ -26,10 +26,11 @@ export const useDateNavigation = () => {
   };
 
   const padNumber = (num: number): string => num.toString().padStart(2, '0');
-  
+
   const getFormattedDay = (date: Date): string => padNumber(date.getDate());
-  
-  const getFormattedMonth = (date: Date): string => padNumber(date.getMonth() + 1);
+
+  const getFormattedMonth = (date: Date): string =>
+    padNumber(date.getMonth() + 1);
 
   const formatShortDate = (date: Date): string => {
     const weekday = date.toLocaleDateString('de-DE', { weekday: 'long' });
@@ -58,8 +59,12 @@ export const useDateNavigation = () => {
 
   const dateRange = getDateRange(selectedDate);
   const formattedSelectedDate = formatShortDate(selectedDate);
-  const previousDayLabel = isToday() ? "Gestern" : formatNavigationDate(getPreviousDay());
-  const nextDayLabel = isToday() ? "Morgen" : formatNavigationDate(getNextDay());
+  const previousDayLabel = isToday()
+    ? 'Gestern'
+    : formatNavigationDate(getPreviousDay());
+  const nextDayLabel = isToday()
+    ? 'Morgen'
+    : formatNavigationDate(getNextDay());
 
   return {
     goToPreviousDay,
@@ -69,6 +74,6 @@ export const useDateNavigation = () => {
     dateRange,
     formattedSelectedDate,
     previousDayLabel,
-    nextDayLabel
+    nextDayLabel,
   };
 };
