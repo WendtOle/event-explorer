@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import MapComponent from "./Map";
 import { EventList } from "./EventList";
 import { useEvents } from "./useDemosEvents";
-import {Event as EventType} from "./useEvents";
+import {Event as EventType} from "../types";
 import NavigationButton from "./NavigationButton";
 import { useDateNavigation } from "./useDateNavigation";
 

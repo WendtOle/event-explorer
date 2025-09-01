@@ -1,5 +1,6 @@
 import { EventInDb } from "@/client";
-import { Event, simpleHash, WayPoint } from "./useEvents";
+import { WayPoint, Event } from "@/types";
+import { simpleHash } from "@/utils/simpleHash";
 
 const getDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -37,7 +38,7 @@ export const processEvent = (event: EventInDb): Event | undefined => {
     if (event.description === undefined || event.description === null) {
         return
     }
-    const output = {
+    return {
         thema: event.description,
         id: simpleHash(event.description),
         way_points: getWayPoints(event), 
@@ -46,6 +47,5 @@ export const processEvent = (event: EventInDb): Event | undefined => {
         date: [getDate(event.start_time)],
         topics: event.topics.map(({ name_de }) => name_de).filter(topic => topic !== "Crawled Event")
     }
-    return output
 }
 

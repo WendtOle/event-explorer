@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L, { type LatLngBounds, type LatLngTuple } from 'leaflet';
 import 'leaflet.markercluster';
+import {type Event, type WayPoint} from '../types'
 
 interface MapComponentProps {
 	event?: Event;

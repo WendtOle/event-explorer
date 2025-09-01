@@ -1,5 +1,5 @@
 import { Event as EventComponent } from "./Event";
-import { Event as EventType } from "./useEvents";
+import { Event as EventType } from "../types";
 import { EventSkeleton } from "./EventSkeleton";
 import { JSX, useEffect, useRef } from "react";
 

@@ -1,5 +1,5 @@
 import { Fragment, ReactElement } from "react"
-import { Event as EventType } from "./useEvents"
+import { Event as EventType } from "../types"
 import { isAfter, parse, format } from "date-fns";
 import { isEqual } from "date-fns/fp";
 import { TopicTags } from "./TopicTags";

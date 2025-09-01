@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js';
-import { Event } from './useEvents';
+import { Event } from '../types';
 
 const FUZZY_THRESHOLD = 0.2
 

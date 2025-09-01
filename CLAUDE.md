@@ -36,7 +36,7 @@ This is a React + Vite + TypeScript + Tailwind CSS application that displays eve
 - `EventExplorer` - Main container managing selected events and date navigation
 - `Map.tsx` - Leaflet-based interactive map with clustering support
 - `Event.tsx` - Event detail component
-- `useEvents.tsx` & `useDemosEvents.tsx` - Custom hooks for event data fetching
+- `useDemosEvents.tsx` - Custom hooks for event data fetching
 
 ### Map Implementation
 - Uses Leaflet with react-leaflet and leaflet.markercluster
