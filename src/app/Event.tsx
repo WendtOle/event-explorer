@@ -3,6 +3,7 @@ import { Event as EventType } from '../types';
 import { isAfter, parse, format } from 'date-fns';
 import { isEqual } from 'date-fns/fp';
 import { TopicTags } from './TopicTags';
+import escapeStringRegexp from 'escape-string-regexp';
 
 interface EventProps {
   id: string;
@@ -44,7 +45,7 @@ export const Event = ({ id, selected, event, onClick }: EventProps) => {
       : event.way_points[0].text;
 
   const regex = new RegExp(
-    `(${event.way_points.map(({ text }) => text).join('|')})`,
+    `(${event.way_points.map(({ text }) => escapeStringRegexp(text)).join('|')})`,
     'gi'
   );
   const neuMatch = event.location.match(/neu:/i);
