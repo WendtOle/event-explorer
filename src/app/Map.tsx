@@ -135,7 +135,7 @@ const MapComponent = ({
     };
   }, []);
   return (
-    <div className="w-full h-44 2">
+    <div className="w-full h-44 sm:h-1/3">
       <div id="map" style={{ height: '100%', width: '100%' }} />
     </div>
   );
